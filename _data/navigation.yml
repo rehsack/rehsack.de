@@ -1,0 +1,7 @@
+main:
+  - title: "Blog"
+    url: /
+  - title: "Über mich"
+    url: /about/
+  - title: "Impressum"
+    url: /imprint/

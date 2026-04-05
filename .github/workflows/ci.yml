@@ -1,0 +1,109 @@
+name: CI — Build & Validate
+on:
+  push:
+    branches-ignore: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v5
+
+    - name: Install Ruby and Jekyll
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        bundler-cache: true
+
+    - name: Build Site
+      run: bundle exec jekyll build
+      env:
+        JEKYLL_ENV: production
+
+    # ---------------------------------------------------------------
+    # Validate: expected pages exist
+    # ---------------------------------------------------------------
+    - name: Check expected pages exist
+      run: |
+        missing=0
+        for page in \
+          index.html \
+          about/index.html \
+          imprint/index.html \
+          assets/css/main.css \
+          feed.xml \
+          sitemap.xml
+        do
+          if [ ! -f "_site/$page" ]; then
+            echo "::error::Missing expected page: _site/$page"
+            missing=1
+          else
+            echo "OK: _site/$page"
+          fi
+        done
+        exit $missing
+
+    # ---------------------------------------------------------------
+    # Validate: no files that should be excluded
+    # ---------------------------------------------------------------
+    - name: Check excluded files are absent
+      run: |
+        leaked=0
+        for file in \
+          CLAUDE.html \
+          claude.html \
+          README.html \
+          readme.html \
+          docker-compose.html \
+          Gemfile \
+          CLAUDE.md \
+          README.md
+        do
+          if [ -f "_site/$file" ]; then
+            echo "::error::Excluded file leaked into _site: $file"
+            leaked=1
+          fi
+        done
+        exit $leaked
+
+    # ---------------------------------------------------------------
+    # Validate: theme toggle JS is included
+    # ---------------------------------------------------------------
+    - name: Check theme toggle present
+      run: |
+        if [ ! -f "_site/assets/js/theme-toggle.js" ]; then
+          echo "::error::theme-toggle.js missing from build"
+          exit 1
+        fi
+        if ! grep -q 'data-theme' _site/index.html; then
+          echo "::error::Theme initialization script not found in HTML head"
+          exit 1
+        fi
+        echo "OK: theme toggle present"
+
+    # ---------------------------------------------------------------
+    # Validate: navigation links resolve
+    # ---------------------------------------------------------------
+    - name: Check navigation targets exist
+      run: |
+        missing=0
+        for path in / /about/ /imprint/; do
+          target="_site${path}index.html"
+          if [ "$path" = "/" ]; then
+            target="_site/index.html"
+          fi
+          if [ ! -f "$target" ]; then
+            echo "::error::Navigation target missing: $target"
+            missing=1
+          else
+            echo "OK: $target"
+          fi
+        done
+        exit $missing

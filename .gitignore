@@ -1,0 +1,14 @@
+.*.sw?
+*.bak
+*~
+build/
+.gradle/
+.vscode/
+*.lock
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+.asset-cache/

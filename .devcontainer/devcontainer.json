@@ -1,0 +1,20 @@
+{
+  "name": "rehsack.de",
+  "image": "ghcr.io/tpo42/adoc:latest",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "postCreateCommand": "bundle config set --local path vendor/bundle && bundle install",
+  "appPort": [4000, 35729],
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": { "label": "Jekyll", "onAutoForward": "notify" },
+    "35729": { "label": "LiveReload", "onAutoForward": "silent" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "asciidoctor.asciidoctor-vscode"
+      ]
+    }
+  }
+}

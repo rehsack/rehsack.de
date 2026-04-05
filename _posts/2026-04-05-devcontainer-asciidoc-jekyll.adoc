@@ -1,0 +1,133 @@
+---
+title: "Jekyll + AsciiDoc im Devcontainer — null lokales Setup"
+date: 2026-04-05
+tags: [devcontainer, jekyll, asciidoc, docker, tpo42]
+translation_url: "https://rehsack.dev/2026/04/05/devcontainer-asciidoc-jekyll/"
+share_on: [linkedin, mastodon, hackernews, reddit]
+---
+
+Eine Jekyll-Site mit AsciiDoc-Unterstützung aufzusetzen bedeutet normalerweise:
+Ruby installieren, Bundler, eine Handvoll Gems.  Mit dem
+https://github.com/tpo42/tpo42-asciidoc-container[tpo42/adoc]-Container und der
+https://containers.dev/[Dev-Containers]-Spezifikation kann man sich das alles
+sparen.
+
+== Die Idee
+
+Der Container `ghcr.io/tpo42/adoc` bringt Ruby 3.x, Bundler 4.x und die
+komplette Asciidoctor-Toolchain mit (asciidoctor, asciidoctor-pdf,
+asciidoctor-diagram, …).  Jekyll und seine Plugins sind nur ein
+`bundle install` entfernt -- kein Grund, das Host-System zuzumüllen.
+
+== Setup
+
+=== 1. Gemfile
+
+Ein Standard-Jekyll-Gemfile -- der Container liefert Ruby und Bundler, auf
+dem Host wird nichts weiter benötigt:
+
+[source,ruby]
+----
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.4"
+gem "jekyll-remote-theme"
+gem "jekyll-asciidoc"
+gem "asciidoctor"
+gem "jekyll-sitemap"
+gem "jekyll-feed"
+gem "jekyll-include-cache"
+gem "webrick"
+----
+
+=== 2. `.devcontainer/devcontainer.json`
+
+[source,json]
+----
+{
+  "name": "meine-site",
+  "image": "ghcr.io/tpo42/adoc:latest",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "postCreateCommand": "bundle config set --local path vendor/bundle && bundle install",
+  "appPort": [4000, 35729],
+  "forwardPorts": [4000, 35729],
+  "portsAttributes": {
+    "4000": { "label": "Jekyll", "onAutoForward": "notify" },
+    "35729": { "label": "LiveReload", "onAutoForward": "silent" }
+  }
+}
+----
+
+Die wichtigsten Punkte:
+
+`image`:: Nutzt direkt `ghcr.io/tpo42/adoc:latest` (der "einfache Fall" aus
+ADR-005).  Kein eigenes Dockerfile nötig.
+
+`postCreateCommand`:: Installiert Gems nach `vendor/bundle` (schreibbar für
+den Container-User, von `.gitignore` ignoriert).
+
+`appPort`:: Mappt Ports auf Docker-Ebene, damit `jekyll serve` auch ohne
+VS Code vom Host aus erreichbar ist.
+
+`forwardPorts`:: Dasselbe für VS Codes eingebautes Port-Forwarding.
+
+=== 3. Container starten
+
+Mit der https://github.com/devcontainers/cli[devcontainer-CLI]:
+
+[source,bash]
+----
+devcontainer up --workspace-folder .
+----
+
+Dann die Site starten:
+
+[source,bash]
+----
+devcontainer exec --workspace-folder . \
+  bundle exec jekyll serve --host 0.0.0.0 --livereload
+----
+
+http://localhost:4000 öffnen -- fertig.
+
+== Warum kein eigenes Jekyll-Image?
+
+Images wie `bretfisher/jekyll-serve` funktionieren, bringen aber ihr eigenes
+Ruby und Gem-Set mit.  Wenn der Content AsciiDoc ist, braucht man die
+Asciidoctor-Toolchain _und_ Jekyll -- zwei getrennte Container oder ein
+aufgeblähtes Custom-Image.
+
+Mit `ghcr.io/tpo42/adoc` als Basis bekommt man Asciidoctor für die
+Dokumentenverarbeitung (flatten, validate, Diagramme extrahieren via `adcw`)
+_und_ Jekyll zum Servieren -- aus einem einzigen Image, gesteuert über das
+Gemfile des Projekts.
+
+== AsciiDoc-Validierung -- geht auch ohne Devcontainer
+
+Der `adcw`-Wrapper braucht keinen Devcontainer.  `.adoc`-Dateien lassen sich
+jederzeit validieren:
+
+[source,bash]
+----
+adcw validate -i _pages/about.adoc
+----
+
+Das startet einen kurzen `docker run --rm` -- kein langlebiger Container nötig.
+
+== Was ich dabei gelernt habe
+
+`appPort` vs `forwardPorts`::
+Die devcontainer-CLI leitet Ports nicht selbst weiter.  `forwardPorts` ist ein
+VS-Code-Feature.  Für reine CLI-Workflows braucht man `appPort`.
+
+Gem-Berechtigungen::
+Der `ghcr.io/tpo42/adoc`-Container läuft als unprivilegierter User.
+`bundle install` ohne `--path` versucht in System-Gem-Verzeichnisse zu
+schreiben und scheitert.  `bundle config set --local path vendor/bundle` löst
+das sauber.
+
+Container-Wiederverwendung::
+`devcontainer up` nutzt bestehende Container wieder.  Nach Änderungen an
+`devcontainer.json` muss der alte Container erst entfernt werden
+(`docker rm -f <id>`), bevor `devcontainer up` erneut funktioniert.

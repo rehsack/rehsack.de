@@ -1,0 +1,70 @@
+{% if page.share_on and page.share_on.size > 0 %}
+{% assign share_url = page.url | absolute_url %}
+<section class="page__share">
+  <h4 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label | default: "Share on" }}</h4>
+
+  {% for platform in page.share_on %}
+    {% case platform %}
+      {% when 'linkedin' %}{% assign icon = "fab fa-fw fa-linkedin" %}{% assign label = "LinkedIn" %}
+      {% when 'mastodon' %}{% assign icon = "fab fa-fw fa-mastodon" %}{% assign label = "Mastodon" %}
+      {% when 'hackernews' %}{% assign icon = "fab fa-fw fa-hacker-news" %}{% assign label = "Hacker News" %}
+      {% when 'reddit' %}{% assign icon = "fab fa-fw fa-reddit" %}{% assign label = "Reddit" %}
+      {% when 'facebook' %}{% assign icon = "fab fa-fw fa-facebook" %}{% assign label = "Facebook" %}
+      {% when 'bluesky' %}{% assign icon = "fab fa-fw fa-bluesky" %}{% assign label = "Bluesky" %}
+    {% endcase %}
+    <a href="#" class="ext-share" data-p="{{ platform }}"
+       data-u="{{ share_url }}" data-t="{{ page.title | escape }}"
+       title="{{ label }}" aria-label="{{ label }}">
+      <i class="{{ icon }}" aria-hidden="true"></i>
+    </a>
+  {% endfor %}
+</section>
+
+<script>
+(function() {
+  var colors = {
+    linkedin:'#0A66C2', mastodon:'#6364FF', hackernews:'#FF6600',
+    reddit:'#FF4500', facebook:'#1877F2', bluesky:'#0085FF'
+  };
+
+  document.querySelectorAll('.ext-share').forEach(function(el) {
+    var c = colors[el.dataset.p] || '#555';
+    el.style.cssText = 'display:inline-block;margin:0 .3em .4em 0;padding:.35em .75em;'
+      + 'font-size:.75em;font-weight:600;color:#fff;text-decoration:none;'
+      + 'border-radius:4px;cursor:pointer;background:' + c;
+  });
+
+  document.querySelector('.page__share').addEventListener('click', function(e) {
+    var el = e.target.closest('.ext-share');
+    if (!el) return;
+    e.preventDefault();
+
+    var p = el.dataset.p, u = encodeURIComponent(el.dataset.u), t = encodeURIComponent(el.dataset.t);
+    var urls = {
+      linkedin:  'https://www.linkedin.com/shareArticle?mini=true&url=' + u + '&title=' + t,
+      hackernews:'https://news.ycombinator.com/submitlink?u=' + u + '&t=' + t,
+      reddit:    'https://www.reddit.com/submit?url=' + u + '&title=' + t,
+      facebook:  'https://www.facebook.com/sharer/sharer.php?u=' + u,
+      bluesky:   'https://bsky.app/intent/compose?text=' + t + '%20' + u
+    };
+
+    if (p === 'mastodon') {
+      var lang = document.documentElement.lang || 'en';
+      var msg = lang.startsWith('de')
+        ? 'Deine Mastodon-Instanz (z.\u00A0B. mstdn.social):'
+        : 'Your Mastodon instance (e.g. mstdn.social):';
+      var inst = localStorage.getItem('mastodon-instance');
+      if (!inst) {
+        inst = prompt(msg);
+        if (!inst) return;
+        inst = inst.replace(/^https?:\/\//, '').replace(/\/+$/, '');
+        localStorage.setItem('mastodon-instance', inst);
+      }
+      window.open('https://' + inst + '/share?text=' + t + '%20' + u, 'share', 'width=600,height=500');
+    } else if (urls[p]) {
+      window.open(urls[p], 'share', 'width=600,height=500');
+    }
+  });
+})();
+</script>
+{% endif %}

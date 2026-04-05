@@ -1,0 +1,38 @@
+---
+title: "Über mich"
+permalink: /about/
+license: "CC BY-NC-ND 4.0"
+---
+
+== Wer ich bin
+
+Ich bin Jens Rehsack, Softwarearchitekt aus Kerpen bei Köln.
+Seit über 25 Jahren bewege ich mich in der Open-Source-Welt -- CPAN-Module
+maintainen, NetBSD-Commit-Bit, jahrelang Beiträge zum Yocto Project.
+Mein Handwerk: Systeme bauen, die halten, statt solche die beeindrucken.
+
+Beruflich übersetze ich zwischen Technik und Geschäft.
+Embedded, IoT, Plattformen -- mein Fokus liegt dort, wo Software auf
+Realität trifft und Architektur über Wartbarkeit entscheidet.
+
+== Warum dieser Blog
+
+Weil Dinge schieflaufen und meistens keiner was sagt.
+Weil ich Meinungen habe, die nicht in einen LinkedIn-Post passen.
+Und weil ich nach Jahrzehnten im Maschinenraum gelegentlich den Kopf
+heben und aufschreiben will, was ich sehe.
+
+Hier geht es um Technik, aber nicht nur.
+Es geht um Haltung, um Entscheidungen und ihre Konsequenzen --
+im Code, in Projekten, im Leben.
+
+== Abseits der Tastatur
+
+Alfista aus Überzeugung -- wer einen Alfa fährt, der weiß, warum man
+sich das antut und warum man es nicht lassen kann.
+Gärtner ohne Zeit, dafür mit Ambitionen.
+Und seit Jahren in einer Pflegesituation, die einem beibringt, was
+Prioritäten wirklich bedeuten.
+
+Wenn Du Fragen hast oder Kontakt aufnehmen willst:
+link:/imprint/[Impressum & Kontakt].
