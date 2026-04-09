@@ -1,0 +1,95 @@
+---
+title: "Offener Brief an Dr. Katrin Vernau — 7 Monate WDR-Intendantin, Zeit für Open Source?"
+date: 2025-08-18
+tags: [medien, open-source, wdr, digitale-souveränität, software-resilienz]
+license: "CC BY-NC-ND 4.0"
+share_on: [linkedin, mastodon, reddit, facebook]
+---
+
+Liebe Frau Dr. Vernau,
+
+Sie sind seit Januar 2025 WDR-Intendantin -- 7 Monate, um neue Akzente zu setzen.
+Haben Sie schon bemerkt, was Ihre Redaktionen seit Jahren übersehen?
+
+Lassen Sie mich Ihnen eine Geschichte erzählen, die zeigt, warum dieser Neuanfang
+nötig ist:
+
+== 2018: Deutscher Perl-Workshop in Köln
+
+2018 schrieb ich WDR-Redaktionen anlässlich des 20. Deutschen Perl-Workshops in
+Köln.  Internationale Konferenz, 200+ Teilnehmer, direkt vor der WDR-Haustür.
+Die Antwort der Lokalzeit-Redaktion:
+
+[quote]
+____
+Das Thema erscheint uns zu spezialisiert.  Unsere Zuschauer sind nicht
+herausragend technisch interessiert.
+____
+
+Aktuelle Stunde?  Keine Antwort.  Wissenschaftsredaktion?  Schweigen.
+Weitere Redaktionen?  Totenstille.
+
+== 2025: Die Ignoranz bleibt, aber die Probleme werden dramatischer
+
+Gerade diese Woche: External Secrets Operator für Kubernetes vor dem Aus -- nur
+noch ein Maintainer, völlig überarbeitet.  Gernot Starke (arc42, 20 Jahre!)
+berichtet: "`Eine Million Downloads jährlich, hunderte Unternehmen nutzen es
+täglich -- aber Contributions?  Nahe Null.`"
+
+**Das ist die Realität unsichtbarer Communities: Genutzt von allen, unterstützt
+von wenigen, berichtet von niemandem.**
+
+== Deutsche Entwickler sichern globale Standards ab
+
+Während Millionen für Fußball-Übertragungen fließen, kostet ein Bericht über
+deutsche Tech-Communities offenbar zu viel Aufwand für eine Antwort.
+
+* Chris Badura aus Köln portiert jährlich ~4 ARM-Architekturen für NetBSD --
+  weltweit genutzt
+* Gernot Starke feiert mit arc42 das 20-jährige Jubiläum -- _der_
+  Architektur-Standard in DACH
+* unByte GmbH entwickelt Self-Bootstrapping K8s -- Kubernetes-Innovation aus NRW
+* Yocto Linux mit Contributoren aus Köln, NRW und ganz Deutschland steckt in
+  Milliarden von Geräten
+* https://coocook.org[Coocook.org] hilft tausenden Ferienlagern bei der
+  Essensplanung
+
+Und das sind nur die, die mir in 30 Sekunden einfallen.  Was würde echte
+Recherche zutage fördern?
+
+**Aber Sie zeigen lieber die nächste Influencer-Doku.**
+
+== Der WDR hat einen Bildungsauftrag
+
+Dazu gehört zu zeigen, _wer_ unsere digitale Zukunft gestaltet.  Das sind nicht
+nur die üblichen Verdächtigen aus dem Silicon Valley -- das sind auch Menschen
+aus Köln, Düsseldorf, Essen.
+
+**Und diese Menschen gehören in die Prime-Formate, nicht nur in
+Bildungs-Nischen.**
+
+Stellen Sie sich vor: "`Austausch in der TH Köln: Coocook-Begründer auf
+Konferenz`" -- das wäre in der Lokalzeit eingeschlagen wie eine Bombe.  Echter
+lokaler Bezug, echte Innovation, echte Menschen.  Hintergrund-Recherchen gern in
+Bildungsformaten -- aber die Stories müssen raus aus der Nische!
+
+== Mein Vorschlag für Ihre verbleibende Amtszeit
+
+Beauftragen Sie eine Redaktion mit einer Serie über deutsche Tech-Communities.
+Zeigen Sie die FrOSCon, die Chemnitzer Linux-Tage, den German Perl Workshop.
+Zeigen Sie die Menschen dahinter.
+
+Nicht als "`Nerd-Spektakel`", sondern als das, was es ist: Die Arbeit an unserer
+gemeinsamen digitalen Zukunft.
+
+**Werden Sie die Intendantin, die den Unterschied macht?**
+
+Mit freundlichen Grüßen und konkreten Erwartungen, +
+Jens Rehsack
+
+[NOTE]
+====
+Falls Sie Inspiration brauchen -- die New York Perl Mongers schauten 2018 nach
+Köln und sagten: "`I had no idea how to celebrate our anniversary.  Now I know.`"
+Vielleicht sollte der WDR auch mal nach Köln schauen.
+====
