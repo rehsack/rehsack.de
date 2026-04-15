@@ -77,7 +77,7 @@ Posts without `translation_url` render normally without any flag.
 
 ## Post defaults
 
-Posts get `read_time: true`, `share: true`, and `header.overlay_image: /assets/images/default-header.jpg` by default (configurable per-post in front matter). Gallery layout defaults to `grid`.
+Posts get `read_time: true`, `share: true`, and `license: "CC BY-NC-SA 4.0"` by default (configurable per-post in front matter). No `header.overlay_image` — posts use a plain `<h1>` title, matching rehsack.dev's style. Gallery layout defaults to `grid`.
 
 ## Git
 

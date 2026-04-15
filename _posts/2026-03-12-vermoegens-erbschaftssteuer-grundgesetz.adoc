@@ -1,0 +1,134 @@
+---
+title: "Vermögens- und Erbschaftssteuer nach Art. 14 GG — ein Zwei-Säulen-Modell"
+date: 2026-03-12
+tags: [politik, grundgesetz, vermögenssteuer, erbschaftssteuer, gemeinwohl]
+license: "CC BY-NC-ND 4.0"
+share_on: [linkedin, mastodon, reddit, facebook]
+---
+
+Die Macher von https://www.vergnuegt.info[vergnügt^] (_Vermögens- und
+Erbschaftsteuer retten Gemeinden in Not über gerechte Talerabgabe!_) haben mich
+inspiriert, einen Gedanken, der mich über Jahre nicht losließ, im Gespräch
+herausfordern zu lassen und schließlich aufzuschreiben.  Ich hoffe, es
+bereichert die Diskussion -- und nun viel Vergnügen.
+
+'''
+
+[quote, Art. 14 Abs. 2 GG]
+____
+Eigentum verpflichtet.  Sein Gebrauch soll zugleich dem Wohle der Allgemeinheit
+dienen.
+____
+
+Dieses Modell nimmt diese Norm beim Wort und leitet daraus ein operatives
+Steuerprinzip ab: Vermögen, das dem Allgemeinwohl dient, ist steuerlich bedient.
+Vermögen, das dies nicht tut, wird besteuert.
+
+== Grundprinzip
+
+Die zentrale Unterscheidung ist nicht die _Höhe_ des Vermögens, sondern seine
+_Funktion_.  Die Frage lautet nicht "`Wie viel besitzt jemand?`", sondern
+"`Trägt dieses Vermögen zum Allgemeinwohl bei -- oder nicht?`"
+
+Vermögen gilt als gemeinwohldienlich, wenn es mindestens eines der folgenden
+Kriterien erfüllt:
+
+* Es erzeugt Arbeitsplätze durch direkte, persönlich verantwortete Inhaberschaft
+  (Beispiel: inhabergeführter Mittelständler wie Trigema).
+* Es generiert versteuerte Erträge -- Dividenden, Mieteinnahmen,
+  Betriebsgewinne -- und wird damit bereits durch bestehende Steuern erfasst.
+* Es ist gemeinnützig gewidmet oder der Allgemeinheit zugänglich (Beispiel:
+  Naturschutzgebiet, öffentlich zugängliches Kulturgut).
+* Es zeigt messbares Wachstum über einen Mehrjahreszeitraum (3–5 Jahre), was auf
+  produktive Kapitalverwendung hindeutet.
+
+== Säule 1: Vermögenssteuer als Auffangnetz
+
+**Was besteuert wird:** Ausschließlich Vermögen, das durch keine bestehende
+Steuer erfasst wird _und_ keinen messbaren gesellschaftlichen Nutzen erzeugt.
+
+**Was nicht besteuert wird:** Jedes Vermögen, das bereits über
+Kapitalertragsteuer, Einkommensteuer, Gewerbesteuer oder andere Abgaben zum
+Gemeinwohl beiträgt.  Ebenso Vermögen, das gemeinnützig gewidmet ist oder durch
+aktive Inhaberführung Arbeitsplätze schafft.
+
+**Steuersatz:** 1–2{nbsp}% jährlich auf das nicht-gemeinwohldienliche Vermögen.
+
+**Freibetrag:** Eine großzügig bemessene Lebensbedarfsgrenze, die Wohnen,
+Bildung, Vorsorge und einen substanziellen Sicherheitspuffer abdeckt.  Alles
+darunter ist grundsätzlich von der Vermögenssteuer befreit.
+
+**Bewertungszeitraum:** Die Gemeinwohldienlichkeit wird über einen rollierenden
+3- bis 5-Jahreszeitraum bewertet, um konjunkturelle Schwankungen und
+Wirtschaftskrisen nicht sinnlos zu verschärfen.
+
+**Kernmerkmal:** Es gibt per Design keine Doppelbesteuerung, da die
+Vermögenssteuer nur in der Lücke greift, die bestehende Steuern nicht abdecken.
+
+== Säule 2: Erbschaftssteuer nach gleichem Prinzip
+
+Die Erbschaftssteuer folgt derselben Logik: Wer beiträgt, trägt bei.  Wer noch
+nicht beiträgt, hat jetzt die Chance.
+
+**Vererbung eines operativen Unternehmens:** Wer ein Unternehmen erbt und es
+mindestens 10 Jahre in direkter Inhaberschaft fortführt, zahlt keine
+Erbschaftssteuer.  Der gesellschaftliche Beitrag wird durch den Betrieb
+erbracht.  Bei Verkauf nach Ablauf der Frist wird der Verkaufserlös als
+reguläres Einkommen versteuert.
+
+**Vererbung von passivem Vermögen:** Wer ein Aktiendepot, Sachwerte oder andere
+passive Vermögenswerte erbt, versteuert diese bei Veräußerung als Einkommen.  Es
+gibt keinen Anspruch auf steuerfreie Weitergabe von Vermögen, das keinen aktiven
+Beitrag zum Allgemeinwohl leistet.
+
+**Entscheidende Unterscheidung:** Direkte, persönlich verantwortete Inhaberschaft
+wird privilegiert.  Anonyme Anteilseignerschaft -- also die bloße Vererbung von
+Kapitalbeteiligungen ohne operative Verantwortung -- wird behandelt wie jedes
+andere passive Vermögen.
+
+== Was dieses Modell nicht ist
+
+**Keine Neidsteuer.** Das Modell richtet sich nicht gegen Reichtum, sondern
+gegen brachliegendes Vermögen.  Wer mit seinem Vermögen wirtschaftet,
+Arbeitsplätze schafft oder Erträge versteuert, wird nicht zusätzlich belastet.
+
+**Keine Leistungsfeindlichkeit.** Im Gegenteil: Das Modell privilegiert aktives,
+produktives Eigentum gegenüber passivem Besitz.  Es belohnt den Unternehmer und
+besteuert den Rentier.
+
+**Keine Umverteilungsideologie.** Der Ausgangspunkt ist das Grundgesetz, nicht
+ein politisches Programm.  Art. 14 Abs. 2 GG formuliert eine Pflicht -- dieses
+Modell operationalisiert sie.
+
+== Offene Fragen (bewusst transparent gehalten)
+
+**Administrierbarkeit:** Die Bewertung von "`Gemeinwohldienlichkeit`" erfordert
+klare, einfache Kriterien.  Je komplexer das System, desto mehr profitieren
+diejenigen mit den besten Steuerberatern.  Die Kriterien müssen so formuliert
+sein, dass sie regelbasiert und nicht ermessensbasiert angewendet werden können.
+
+**Konkrete Lebensbedarfsgrenze:** Die genaue Höhe des Freibetrags muss politisch
+verhandelt werden.  Ob 25 oder 40 Millionen Euro -- die Zielgruppe beginnt
+mindestens bei Faktor 10 darüber.
+
+**Deklarationspflicht:** Um Umgehung zu verhindern (das
+"`Rembrandt-auf-dem-Dachboden`"-Problem), braucht es eine jährliche
+Deklarationspflicht für Vermögen oberhalb der Lebensbedarfsgrenze, inklusive
+Sachwerte.  Nichtdeklaration wird sanktioniert.
+
+**Rechtsstaatliche Ausgestaltung:** Die konkrete juristische Umsetzung --
+insbesondere Fragen der Rückwirkung und der Vereinbarkeit mit europäischem
+Recht -- erfordert fachliche Expertise und ist in diesem Konzeptpapier bewusst
+nicht abschließend behandelt.
+
+== Zusammenfassung in einem Satz
+
+_"`Eigentum verpflichtet`" -- wer dieser Verpflichtung nachkommt, ist steuerlich
+bedient; wer nicht, zahlt Vermögenssteuer._
+
+'''
+
+_Dieses Konzept entstand aus einer strukturierten Debatte, in der die Annahmen
+bewusst und systematisch stressgetestet wurden.  Es erhebt keinen Anspruch auf
+juristische Vollständigkeit, sondern versteht sich als Denkrahmen für die
+politische Diskussion._
