@@ -1,0 +1,216 @@
+---
+title: "Validate-First: AsciiDoc-Projekte mit Devcontainer und docker-compose"
+date: 2026-04-12
+tags: [devcontainer, docker-compose, asciidoc, doctoolchain, ci, tpo42]
+translation_url: "https://rehsack.dev/2026/04/12/validate-first-docker-compose-devcontainer/"
+share_on: [linkedin, mastodon, hackernews, reddit]
+---
+
+Im link:/2026/04/05/devcontainer-asciidoc-jekyll/[letzten Post] ging es
+um einen einzelnen Container für Jekyll + AsciiDoc.  Diesmal wird es
+spannender: zwei Container, die zusammenarbeiten -- einer validiert,
+der andere baut.
+
+== Das Problem: doctoolchain schluckt Fehler
+
+https://doctoolchain.org/[docToolchain] ist das Referenz-Werkzeug für
+arc42/req42-Dokumentation.  Es baut HTML und PDF aus AsciiDoc-Quellen --
+zuverlässig, erprobt, gut integriert.
+
+Was es nicht tut: bei kaputtem AsciiDoc abbrechen.  Fehlende Includes,
+aufgelöste Cross-Referenzen, Syntaxfehler -- docToolchain meldet sie als
+Warnung und baut trotzdem weiter.  Am Ende hat man ein PDF mit
+Platzhaltern, wo eigentlich Inhalte stehen sollten.
+
+In einer CI-Pipeline ist das fatal.  Der Build ist „grün", das Artefakt
+ist kaputt.
+
+== Die Lösung: Validierung als Gate
+
+Der `ghcr.io/tpo42/adoc`-Container (der aus dem
+link:/2026/04/05/devcontainer-asciidoc-jekyll/[Jekyll-Post] bekannte)
+enthält nicht nur die AsciiDoc-Toolchain, sondern auch ein
+`validate`-Kommando.  Dahinter steckt ein `asciidoctor`-Aufruf im
+Strict-Modus: fehlende Dateien, kaputte Referenzen, Syntaxfehler --
+alles wird zum Fehler, nicht zur Warnung.
+
+Die Idee: Validierung _vor_ dem Build.  Erst wenn die Quellen sauber
+sind, darf docToolchain bauen.
+
+== Zwei Container, ein Workflow
+
+Statt alles in einen Container zu packen, trennen wir die Concerns:
+
+[cols="1,2,2"]
+|===
+| Container | Aufgabe | Image
+
+| **adoc**
+| AsciiDoc-Validierung, Toolchain für Entwicklung
+| `ghcr.io/tpo42/adoc:latest`
+
+| **doctoolchain**
+| PDF- und HTML-Build
+| `doctoolchain/doctoolchain:v3.4.2`
+|===
+
+Das Bindeglied ist eine `docker-compose.yml`:
+
+[source,yaml]
+----
+services:
+  adoc:
+    image: ghcr.io/tpo42/adoc:latest
+    volumes:
+      - .:/workspace
+    command: ["sleep", "infinity"]
+
+  doctoolchain:
+    image: doctoolchain/doctoolchain:v3.4.2
+    platform: linux/amd64
+    volumes:
+      - .:/project
+      - dtc-gradle-cache:/home/dtcuser/.gradle
+    entrypoint: ["sleep", "infinity"]
+    environment:
+      DTC_HEADLESS: "true"
+      DTC_OPTS: >-
+        -PmainConfigFile=docToolchainConfig.groovy
+        --warning-mode=none -Dfile.encoding=UTF-8
+
+volumes:
+  dtc-gradle-cache:
+----
+
+Beide Container laufen dauerhaft (`sleep infinity`).  Befehle gehen per
+`docker compose exec` rein -- kein Container-Start-Overhead pro Aufruf.
+
+== Der Devcontainer
+
+Die `.devcontainer/devcontainer.json` referenziert dieselbe Compose-Datei:
+
+[source,json]
+----
+{
+  "name": "mein-doku-projekt",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "adoc",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose"
+}
+----
+
+`devcontainer up` startet _beide_ Container.  Der adoc-Container ist
+der Primary -- dort editiert und validiert man.  Der
+doctoolchain-Container läuft als Sidecar für Builds.
+
+== Der Workflow
+
+[source,bash]
+----
+# Container starten
+docker compose up -d
+
+# Validieren
+docker compose exec adoc validate \
+    -i Docs/req42-container-toolchain.adoc \
+    -i Docs/arc42-container-toolchain.adoc \
+    --strict --verbose
+
+# Bauen
+docker compose exec doctoolchain \
+    bash -c 'doctoolchain . generatePDF $DTC_OPTS'
+docker compose exec doctoolchain \
+    bash -c 'doctoolchain . generateHTML $DTC_OPTS'
+----
+
+Oder mit der devcontainer-CLI -- zumindest für den adoc-Container:
+
+[source,bash]
+----
+devcontainer exec --workspace-folder . validate -i Docs/*.adoc --strict
+----
+
+Für den doctoolchain-Container geht das (noch) nicht:
+`devcontainer exec` kennt nur den Primary-Service, kein `--service`-Flag.
+Für den Build bleibt `docker compose exec`.
+
+== Der Nebeneffekt: 40 Sekunden → 2 Sekunden
+
+docToolchain basiert auf Gradle.  Jeder `docker run` startet eine neue
+JVM, initialisiert den Gradle-Daemon, lädt Plugins -- rund 40 Sekunden,
+bevor überhaupt etwas gebaut wird.
+
+Der `dtcw`-Wrapper setzt bewusst `--no-daemon`, weil der Daemon bei
+Einmal-Containern sowieso stirbt.  Wenn der Container aber _lebt_
+(`sleep infinity` + `docker compose exec`), bleibt der Daemon warm:
+
+[cols="2,1,1"]
+|===
+| | Erster Aufruf | Folgeaufrufe
+
+| `docker run --no-daemon` (klassisch)
+| ~40s
+| ~40s
+
+| `docker compose exec` (persistent)
+| ~15s
+| **~2s**
+|===
+
+Der Gradle-Cache liegt in einem Named Volume (`dtc-gradle-cache`) und
+überlebt `docker compose down` / `up`-Zyklen.  Nur `docker compose down -v`
+räumt ihn ab.
+
+Das ist kein Trick -- es ist schlicht die Arbeitsweise, für die Gradle
+entworfen wurde.  `docker run` erzwingt den Cold-Start, den Gradle
+eigentlich vermeiden will.
+
+== CI: Dieselben Images, anderer Ablauf
+
+In der CI-Pipeline (Jenkins, GitLab CI, ...) laufen die Container als
+Einmal-Aufrufe.  Der warme Daemon bringt dort nichts -- dafür ist die
+Validierung als Gate entscheidend:
+
+[source]
+----
+Stage: Validate    →  Stage: Build PDF  →  Stage: Build HTML  →  Archive
+(ghcr.io/tpo42/adoc) (doctoolchain)       (doctoolchain)
+----
+
+Wenn Validate fehlschlägt, laufen die Build-Stages nicht.  Kein
+kaputtes PDF in den Artefakten.
+
+== Was ich dabei gelernt habe
+
+`sleep infinity` ist keine Krücke::
+Bei Task-Runner-Containern (validate, build) klingt ein dauerhaft
+laufender Container nach Verschwendung.  Aber wenn der Container
+zustandsbehaftet ist (Gradle-Daemon, Gem-Cache), ist das persistente
+Setup die performante Variante.
+
+`DTC_OPTS` als Environment-Variable::
+docToolchain erwartet diverse Flags (`-PmainConfigFile=...`,
+`--warning-mode=none`, ...).  In der `docker-compose.yml` als
+`DTC_OPTS` hinterlegt, spart man sich die Flags bei jedem Aufruf:
+`bash -c 'doctoolchain . generatePDF $DTC_OPTS'`.
+
+`devcontainer exec` hat Grenzen::
+Die devcontainer-CLI kann nur in den Primary-Service execen.  Für
+Sidecar-Container bleibt `docker compose exec`.  Ein `--service`-Flag
+wäre ein sinnvolles Feature-Request an die
+https://github.com/devcontainers/cli[devcontainers/cli].
+
+== Ausblick
+
+Dieses Setup dokumentiert _nur_ Anforderungen und Architektur -- es gibt
+keinen Quellcode zu kompilieren.  In einem Firmware-Projekt kommt
+mindestens ein dritter Container dazu: der Cross-Compiler.  Und bei
+Projekten mit herstellerspezifischer Code-Generierung (STM32CubeMX)
+ein vierter, der Artefakte über ein Shared Volume an den
+Compile-Container weitergibt.
+
+Die `docker-compose.yml` skaliert dafür linear -- ein Service pro
+Concern, dieselbe Compose-Datei für Devcontainer und CI.
+
+Aber dazu mehr, wenn es soweit ist.
