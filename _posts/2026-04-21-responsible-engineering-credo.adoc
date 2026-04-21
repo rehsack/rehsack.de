@@ -1,0 +1,112 @@
+---
+title: "Responsible Engineering Credo: Meine Antwort auf die KI-Debatte"
+date: 2026-04-21
+tags: [ki, software-engineering, verantwortung, credo]
+translation_url: "https://rehsack.dev/2026/04/21/responsible-engineering-credo/"
+share_on: [linkedin, mastodon]
+license: "CC BY-NC-ND 4.0"
+---
+
+Seit Wochen geistert mir eine Frage durch den Kopf: Wie reden wir eigentlich
+über Verantwortung in der KI-gestützten Softwareentwicklung?
+
+== Manifeste und ihre Grenzen
+
+Es entstehen gerade viele Manifeste zur KI-gestützten Entwicklung. Das
+https://aicraftspeopleguild.github.io/aicraftspeopleguild-manifesto.html[AI Craftspeople Guild Manifesto]
+ist eines davon. Gut gemeint, wichtige Themen. Aber beim Lesen habe ich
+gemerkt: Meine Situation kommt darin nicht vor. Mein berufliches Umfeld,
+meine Werkzeuge, mein Kontext — das Manifest spricht *für* alle
+Softwareprofis, aber nicht *mit* mir.
+
+Das ist das Grundproblem vieler Manifeste: Sie setzen Standards, ohne die
+Vielfalt der Kontexte zu kennen. Semantic Anchors, Skills, Guardrails —
+wer täglich mit diesen Werkzeugen arbeitet, erkennt sich in pauschalen
+Forderungen oft nicht wieder.
+
+Das https://agilemanifesto.org/[Agile Manifesto] hat das anders gemacht.
+„Individuals and interactions over processes and tools" ist keine Deklaration
+einer Gruppe, die für die Branche spricht. Es ist eine Einladung. Eine Haltung,
+die *ich* annehmen kann — oder nicht. *Ich* priorisiere Menschen über Prozesse.
+*Ich* entscheide mich dafür. Niemand spricht für mich.
+
+Uncle Bob wird oft als Moralapostel missverstanden. Aber wenn man genau
+liest, sagt er nicht: „Ihr müsst alle Clean Code schreiben." Er sagt:
+„Hier sind Prinzipien, die — wenn du dich daran hältst — dir und deinem
+Team helfen, daran zu wachsen." Selbstwirksamkeit, nicht Fremdbestimmung.
+
+== Left over Right — für mich selbst
+
+Also habe ich aufgeschrieben, woran *ich* mich halte. Kein Manifest, das
+anderen vorschreibt. Ein Credo — eine persönliche Verpflichtung.
+
+Das Fundament ist einfach:
+
+[quote]
+____
+Wir übernehmen die volle Verantwortung für jede Zeile Code, die wir
+committen — unabhängig von ihrer Herkunft.
+____
+
+Die Werte folgen dem „X über Y"-Muster:
+
+* Verantwortbare Urheberschaft über anonyme Erzeugung
+* Durchgesetzte über versprochene Qualität
+* Vorhersagbares über angenommenes Verhalten
+* Gewährleistete über versprochene Datenintegrität
+* Persönliche Haftung über diffuse Verantwortung
+* Informierte Zustimmung über stillschweigende Annahme
+
+Das vollständige Credo mit Erläuterungen gibt es auf GitHub:
+https://github.com/rehsack/Responsible-Engineering-Credo
+
+== Warum jetzt?
+
+KI kann Code generieren. Aber *Verantwortung* kann nicht generiert werden —
+sie muss übernommen werden. Jede Zeile Code, die in Produktion geht, braucht
+jemanden, der sagt: „Ich stehe dahinter."
+
+Das ist keine neue Idee. Signierte Commits gibt es seit Jahren. Code Reviews
+auch. Aber in einer Welt, in der ein Wochenend-Projekt plötzlich SaaS-Startup
+heißt und Kundendaten verarbeitet, wird die Frage drängender: Wer trägt die
+Verantwortung, wenn es schiefgeht?
+
+== Werkzeuge statt Vorschriften
+
+Ein Credo ist schön. Aber wie setzt man es um? Nicht durch Regeln, die von
+oben kommen — sondern durch Werkzeuge, die jedes Team befähigen, seine eigenen
+Entscheidungen zu treffen.
+
+Der https://llm-coding.github.io/vibe-coding-risk-radar/[Vibe Coding Risk Radar]
+ist so ein Werkzeug. Fünf Dimensionen, vier Risikostufen, konkrete Mitigationen.
+Kein „ihr müsst diese Risiken beachten" — sondern ein interaktives Tool, mit
+dem *du* deine eigene Entscheidungsmatrix baust. Für dein Projekt, mit deinem
+Kontext, nach deiner Einschätzung.
+
+Das ist der Unterschied zwischen einem Manifest, das für alle spricht, und
+einem Werkzeugkasten, der jeden einzelnen ermächtigt.
+
+== Die unbeantwortete Frage
+
+Was die meisten Manifeste nicht adressieren: Wo endet meine Verantwortung
+in einer Welt voller Abhängigkeiten?
+
+Ich nutze eine Government-API — die wurde mit KI entwickelt. Ich nutze
+npm-Pakete — irgendwer hat mit Copilot contributed. Mein Auftraggeber zahlt,
+dass ich keine KI nutze — muss ich dann die API der Bundesdruckerei ablehnen?
+
+Das Credo zieht die Grenze klar: *Ich übernehme Verantwortung für den Code,
+den ich committe.* Nicht für die gesamte Lieferkette. Nicht für Government-APIs.
+Für meinen Beitrag.
+
+== Einladung
+
+Das Credo ist ein Diskussionsentwurf. Ich erhebe keinen Anspruch auf
+Vollständigkeit oder Weisheit. Wenn es bei dir resoniert — nimm es, fork es,
+pass es an. Wenn du anderer Meinung bist — lass uns reden.
+
+GitHub: https://github.com/rehsack/Responsible-Engineering-Credo
+
+Die Zukunft der Softwareentwicklung wird nicht durch Tools entschieden,
+sondern durch die Menschen, die sie einsetzen. Und durch die Haltung, mit
+der sie das tun.
