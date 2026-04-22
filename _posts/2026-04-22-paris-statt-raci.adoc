@@ -1,0 +1,183 @@
+---
+title: "PARIS statt RACI: Verantwortlichkeiten für req42 und arc42"
+date: 2026-04-22
+tags: [architektur, req42, arc42, tpo42, stakeholder, verantwortung]
+translation_url: "https://rehsack.dev/2026/04/22/paris-over-raci/"
+share_on: [linkedin, mastodon]
+license: "CC BY-NC-SA 4.0"
+---
+
+„In den letzten 30 Jahren hat das immer der Erwin gemacht."
+
+So beginnen viele Gespräche, wenn ein Mittelständler feststellt, dass
+Verantwortlichkeiten unklar sind. Erwin wusste, wo seine Werkzeuge liegen.
+Erwins Chef sagte: „Mach das mal" — und dann lief das. Tradiertes Wissen,
+impliziter Regelkatalog, gewachsene Strukturen.
+
+Dann geht Erwin in Rente. Und plötzlich wird klar: Die Verantwortlichkeiten
+waren nie dokumentiert. Sie waren in Erwins Kopf.
+
+== Die erste Antwort: RACI
+
+Jemand sagt: „Wir brauchen eine RACI-Matrix." Das klingt professionell.
+RACI (Responsible, Accountable, Consulted, Informed) ist ein etabliertes
+Werkzeug. Es soll klären, wer für was zuständig ist, wer abnimmt, wer
+gefragt wird.
+
+Das Problem ist nicht, dass RACI falsch wäre. Das Problem ist, dass RACI
+in bestimmten Kontexten zu grob ist.
+
+== Wo RACI an seine Grenzen stößt
+
+RACI funktioniert gut, wenn Aufgaben klar abgrenzbar sind, die Rollen
+dahinter homogen, und wenn die Trennung zwischen Ausführung, Beratung
+und Abnahme nicht besonders fein sein muss. In operativen Bereichen —
+Produktion, Logistik, Support — ist das oft der Fall.
+
+In Forschung und Entwicklung sieht es anders aus. Nicht weil F&E keine
+Prozesse hätte — Reviews, Freigaben, Tests, Architekturentscheidungen,
+Budgetsteuerung sind durchaus wiederkehrende Teilprozesse. Aber der
+Gesamtprozess ist nicht vollständig stabil oder vorhersagbar.
+
+Und hier zeigt sich die Schwäche von RACI: Wenn „Responsible" mehrere
+fachlich unterschiedliche Beiträge gleichzeitig umfasst, wird die Matrix
+unlesbar.
+
+Der Architekt ist „R" für die arc42-Dokumentation. Aber was heißt das?
+Schreibt er selbst? Reviewt er nur? Gibt er fachlich ab? Trainiert er
+das Team? Diese Fragen beantwortet ein einzelner Buchstabe nicht.
+
+== Was in F&E oft fehlt
+
+RACI fragt im Kern: Wer arbeitet? Wer ist verantwortlich? Wer wird gefragt?
+Wer wird informiert?
+
+In F&E braucht man oft mehr:
+
+* Wer *berät die fachliche Richtung*?
+* Wer *prüft* das Ergebnis?
+* Wer *zeichnet fachlich verantwortlich ab*?
+
+„Consulted" ist dafür zu breit. Beratung ist nicht dasselbe wie fachliche
+Vorprüfung. Und „Accountable" vermischt oft zwei verschiedene Dinge:
+organisatorische Verantwortung (Budget, Zeit) und fachliche Abnahme.
+
+Gerade in Architektur- und Entwicklungszusammenhängen ist diese Trennung
+wichtig. Nicht jede Person, die Budget oder Zeit verantwortet, kann auch
+fachlich entscheiden, ob eine Lösung tragfähig ist.
+
+== PARIS: Feinere semantische Auflösung
+
+PARIS stammt aus dem PMBOK footnote:[A Guide to the Project Management Body
+of Knowledge. Project Management Institute. 2000. p. 111. ISBN 1-880410-22-2.].
+Es ist kein Ersatz für saubere Governance, sondern eine feinere
+Rollenbeschreibung dort, wo RACI zu viel in einer Spalte bündelt:
+
+[cols="1,3"]
+|===
+| P — Participant | Arbeitet aktiv mit
+| A — Accountable | Trägt organisatorische Verantwortung (Budget, Zeit)
+| R — Review required | Prüft fachlich
+| I — Input required | Liefert fachlichen Input, berät die Richtung
+| S — Sign-off required | Zeichnet fachlich verantwortlich ab
+|===
+
+Der Unterschied zu RACI ist nicht, dass PARIS „besser" wäre. Der Unterschied
+ist die Auflösung. PARIS trennt Verantwortungsdimensionen, die in F&E oft
+auseinanderfallen.
+
+== Warum A und S trennen?
+
+In vielen Organisationen fallen Budget-Verantwortung und fachliche Abnahme
+bewusst zusammen. Das funktioniert, solange dieselbe Person beides kann.
+
+Ein konkretes Szenario, wo es nicht funktioniert:
+
+Der Product Owner (A) trägt die Budgetverantwortung für ein neues Feature.
+Wenn es länger dauert, muss er das erklären. Aber kann er auch fachlich
+beurteilen, ob die Architekturentscheidung tragfähig ist? Ob die
+Qualitätsszenarien erfüllt sind? Ob die Sicherheitsanforderungen stimmen?
+
+In diesem Fall braucht es jemanden, der fachlich abzeichnet (S) — einen
+Architekten, einen QM-Beauftragten, einen Security-Experten. Die
+organisatorische Verantwortung bleibt beim PO. Die fachliche Abnahme
+liegt woanders.
+
+PARIS macht diese Trennung explizit. RACI vermischt sie in „Accountable".
+
+== Warum R und I trennen?
+
+RACI kennt „Consulted" — wird gefragt, gibt Input. Aber in F&E gibt es
+einen Unterschied zwischen:
+
+* **Input** (I): Der Fachbereich beschreibt Anforderungen. Der Kunde
+  erklärt seinen Anwendungsfall. Ein Stakeholder liefert Randbedingungen.
+  Das ist Beratung der fachlichen Richtung.
+
+* **Review** (R): Der QM-Beauftragte prüft, ob die Qualitätsanforderungen
+  erfüllt sind. Der Security-Experte prüft das Bedrohungsmodell. Das ist
+  fachliche Vorprüfung mit Ergebnis.
+
+„Consulted" ist dafür zu breit und zu unverbindlich. PARIS unterscheidet.
+
+== Ergänzung: Konsent als Governance-Muster
+
+PARIS selbst sagt nicht, was mit dem Ergebnis eines Reviews passiert.
+Hier kann Soziokratie 3.0 (S3) ergänzen:
+
+* Reviewer können einen *begründeten Einwand* erheben
+* Kein Einwand = Vorschlag gilt
+* Ein Einwand ist kein Veto, sondern ein Verbesserungsimpuls
+
+Das ist ein *zusätzliches* Governance-Muster — nicht Teil von PARIS selbst.
+Es beantwortet die Frage: Was passiert, wenn der Reviewer Bedenken hat?
+
+In der Praxis hängt viel davon ab, wer Einwände definiert, wann sie als
+schwerwiegend gelten, und wie Konflikte aufgelöst werden. Das muss jede
+Organisation für sich klären. S3 bietet einen Rahmen dafür.
+
+== PARIS in req42 und arc42
+
+req42 und arc42 haben explizite Stakeholder-Kapitel. Sie fragen für jede
+Rolle: Warum diese Rolle? Was ist ihre Verantwortung? Welche Kompetenzen
+braucht sie?
+
+PARIS liefert die Begrifflichkeit, um diese Fragen zu beantworten:
+
+Für **req42 Kapitel 2** lässt sich fragen:
+* Wer arbeitet mit (P)?
+* Wer trägt organisatorische Verantwortung (A)?
+* Wer prüft fachlich \(R)?
+* Wer liefert Input (I)?
+* Wer zeichnet ab (S)?
+
+Für **req42 Kapitel 9** geht es dann um Rollen, Responsibilities und
+Skills.  Genau hier wird aus einer abstrakten Matrix eine dokumentierbare
+Verantwortungsstruktur.
+
+Auch **arc42** profitiert davon, weil Architekturentscheidungen, Reviews
+und Freigaben klarer zugeordnet werden können. Wer reviewed ADRs? Wer
+gibt fachlichen Sign-off? Wer liefert die Anforderungen? PARIS macht diese
+Fragen sichtbarer als RACI.
+
+== Zusammenfassung
+
+RACI ist nicht falsch. Es ist ein solides Werkzeug für Aufgaben- und
+Zuständigkeitsklärung. Aber wenn „Responsible" mehrere fachlich verschiedene
+Rollen zusammenzieht, wird die Matrix unlesbar.
+
+PARIS bietet eine feinere Auflösung:
+
+* Trennung von organisatorischer (A) und fachlicher (S) Verantwortung
+* Trennung von Input (I) und Prüfung \(R)
+* Explizite Benennung derer, die arbeiten (P)
+
+Für F&E und Architekturarbeit — wo nicht nur gefragt wird, wer arbeitet,
+sondern auch wer fachlich berät, wer prüft und wer am Ende signiert —
+ist diese Auflösung oft notwendig.
+
+== Nächste Schritte
+
+In einem Folgepost zeige ich, wie man eine bestehende RACI-Matrix nach
+PARIS übersetzt — und wo die typischen Stolpersteine liegen.
+
