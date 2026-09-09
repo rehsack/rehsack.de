@@ -1,0 +1,23 @@
+<section class="latest-posts">
+  <h2 class="section-heading">Aus dem Blog</h2>
+  <div class="post-cards">
+    {% assign latest = site.posts | sort: 'date' | reverse %}
+    {% for post in latest limit:3 %}
+      <article class="post-card">
+        <h3 class="post-card__title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <p class="post-card__meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+        </p>
+        {% if post.excerpt %}
+          <div class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</div>
+        {% endif %}
+        <a class="post-card__read" href="{{ post.url | relative_url }}">Weiterlesen →</a>
+      </article>
+    {% endfor %}
+  </div>
+  <p class="latest-posts__all">
+    <a href="{{ '/blog/' | relative_url }}">Alle Beiträge →</a>
+  </p>
+</section>

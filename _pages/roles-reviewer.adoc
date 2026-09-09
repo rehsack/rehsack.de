@@ -1,0 +1,41 @@
+---
+title: "Reviewer"
+permalink: /roles/reviewer/
+---
+
+Bestehende Architekturen, Yocto-Layer, Build-Pipelines und ADRs prüfen
+— mit Blick auf Tragfähigkeit, Reproduzierbarkeit und Wartbarkeit.
+Verbesserungspfade aufzeigen, Risiken benennen. Informelle Bewertung
+mit fachlicher Tiefe — *kein* formelles Pre-Audit und keine
+Zertifizierungsbegleitung.
+
+== Wann diese Rolle passt
+
+// TODO ausarbeiten — Stichworte:
+// - Vor einer Investitionsentscheidung (Plattform-Generation, Tooling-
+//   Wechsel, Migration)
+// - Nach Schmerzen, deren Ursache unklar ist (Build-Zeiten, Field-
+//   Update-Probleme, Maintainer-Wechsel)
+// - Als Sanity-Check vor einem formellen Audit — gefundene Lücken
+//   schließen, bevor der Auditor sie aufschreibt
+// - Wenn das Team "betriebsblind" geworden ist und einen Außenblick
+//   braucht
+
+== Verwandte Rollen
+
+link:/roles/architect/[Architekt], link:/roles/sparring-partner/[Sparringspartner]
+
+== Relevante Themen
+
+link:/services/platform-architecture/[Plattform- & Systemarchitektur],
+link:/services/embedded-yocto/[Embedded & Yocto],
+link:/services/distributed-systems/[Verteilte Systeme & Plattformen],
+link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller],
+link:/services/engineering-methodology/[Engineering-Methodik],
+link:/services/open-source-engagement/[Open Source Engagement]
+
+[NOTE]
+====
+Diese Seite ist als Skelett angelegt und wird vor Live-Gang vertieft.
+Für ein Erstgespräch: link:/kontakt/[Termin vereinbaren].
+====

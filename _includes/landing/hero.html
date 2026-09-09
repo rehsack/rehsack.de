@@ -1,0 +1,9 @@
+<section class="landing-hero">
+  <h1 class="landing-hero__title">{{ page.title | default: site.title }}</h1>
+  {% if page.tagline %}
+    <p class="landing-hero__tagline">{{ page.tagline }}</p>
+  {% endif %}
+  <div class="landing-hero__bio">
+    {{ content }}
+  </div>
+</section>

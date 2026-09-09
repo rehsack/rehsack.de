@@ -1,0 +1,41 @@
+---
+title: "Coach"
+permalink: /roles/coach/
+---
+
+Team-Befähigung — Yocto-Schulung, Mentoring neuer Maintainer, Recipe-
+und Layer-Patterns einüben, Onboarding-Pfade für neue
+Team-Mitglieder. Ziel ist, dass Ihr Team die Disziplin selbst trägt,
+nicht dass es weiter auf mich angewiesen bleibt.
+
+== Wann diese Rolle passt
+
+// TODO ausarbeiten — Stichworte:
+// - Team-Aufbau: neue Yocto-Entwickler kommen dazu, Onboarding-Pfad
+//   fehlt
+// - Maintainer-Übergabe: ein bisheriger Maintainer geht, ein neuer
+//   muss in die Rolle hineinwachsen
+// - Methodik-Einführung: arc42/ADRs/docs-as-code sollen im Team
+//   etabliert werden, nicht als Pflicht-Ritual
+// - Nach einem Reviewer-Bericht: Empfohlene Praktiken nicht nur
+//   anwenden, sondern verstehen
+
+== Verwandte Rollen
+
+link:/roles/architect/[Architekt], link:/roles/sparring-partner/[Sparringspartner],
+link:/roles/interim-maintainer/[Interim-Maintainer],
+link:/roles/lead-engineer/[Lead Engineer] (Coaching durch Vorbild im konkreten Code)
+
+== Relevante Themen
+
+link:/services/platform-architecture/[Plattform- & Systemarchitektur],
+link:/services/embedded-yocto/[Embedded & Yocto],
+link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller],
+link:/services/engineering-methodology/[Engineering-Methodik],
+link:/services/open-source-engagement/[Open Source Engagement]
+
+[NOTE]
+====
+Diese Seite ist als Skelett angelegt und wird vor Live-Gang vertieft.
+Für ein Erstgespräch: link:/kontakt/[Termin vereinbaren].
+====

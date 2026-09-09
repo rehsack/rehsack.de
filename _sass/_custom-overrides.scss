@@ -2,14 +2,34 @@
 // Wider content area — override Minimal Mistakes' default narrow layout
 // ---------------------------------------------------------------------------
 
-// Constrain both hero overlay and main content to the same width
+// No max-width on the outer containers: let content + masthead flow to
+// full viewport width. The 2.5% padding on .initial-content and
+// .masthead__inner-wrap gives the breathing room AND makes both align
+// (since both are now full-width with identical inner padding).
+// !important needed to override MM's @media (min-width: 80em) caps at 1280px.
 .page__hero--overlay .wrapper,
+.masthead__inner-wrap,
 #main {
-  max-width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1em;
-  padding-right: 1em;
+  max-width: none !important;
+}
+
+.initial-content {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.masthead__inner-wrap {
+  padding-left: calc(2.5% + 2em);
+  padding-right: calc(2.5% + 2em);
+}
+
+// Subtitle in masthead and tagline on landing: constrain width so the
+// long "X — Y" form wraps under the title instead of pushing into the
+// navigation area on the right.
+.site-subtitle,
+.landing-hero__tagline {
+  display: block;
+  max-width: 52ch;
 }
 
 // Override Susy grid constraint on single-layout pages
@@ -28,13 +48,16 @@
 // ---------------------------------------------------------------------------
 
 // Inline code: monospace with subtle border, transparent background
+// `a > code` included so code-styled links blend with surrounding text
+// (MM's default `.page__content :not(pre)>code` rule sets a white bg).
 code.highlighter-rouge,
 p > code,
 li > code,
 td > code,
 dd > code,
 dt > code,
-h1 > code, h2 > code, h3 > code, h4 > code {
+h1 > code, h2 > code, h3 > code, h4 > code,
+a > code {
   background: transparent !important;
   color: inherit !important;
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
@@ -290,10 +313,19 @@ html[data-theme="dark"] {
   td > code,
   dd > code,
   dt > code,
-  h1 > code, h2 > code, h3 > code, h4 > code {
+  h1 > code, h2 > code, h3 > code, h4 > code,
+  a > code {
     background: transparent !important;
     color: inherit !important;
     border-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  // Code-styled links must not get the dark-mode link color (#6db3f2);
+  // they should look like plain code. Specificity matches MM's
+  // `html[data-theme=dark] a` rule.
+  a:has(> code),
+  .page__content a:has(> code) {
+    color: inherit !important;
   }
 
   // --- Masthead / Navigation ----------------------------------------------
@@ -462,4 +494,307 @@ html[data-theme="dark"] {
     border-color: #2a2a4a !important;
     color: #e0e0e0 !important;
   }
+}
+
+// ============================================================================
+// Landing page (index.adoc, layout: landing)
+// ============================================================================
+
+.landing-hero {
+  margin: 1.5em 0 3em;
+
+  &__title {
+    font-size: 2.5em;
+    line-height: 1.1;
+    margin: 0 0 0.3em;
+  }
+
+  &__tagline {
+    font-size: 1.25em;
+    color: #555;
+    margin: 0 0 1.5em;
+    font-weight: 300;
+  }
+
+  &__bio {
+    font-size: 1.05em;
+    max-width: 60em;
+    line-height: 1.55;
+  }
+}
+
+.section-heading {
+  font-size: 1.5em;
+  margin: 0 0 1em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #ddd;
+}
+
+// --- Pillars ---------------------------------------------------------------
+
+.landing-pillars {
+  margin: 3em 0;
+}
+
+.pillar-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25em;
+
+  @media (min-width: 40em) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pillar-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em 1.2em;
+  background: #fff;
+
+  &__title {
+    font-size: 1.1em;
+    margin: 0 0 0.4em;
+    line-height: 1.3;
+  }
+
+  &__desc {
+    font-size: 0.95em;
+    margin: 0;
+  }
+}
+
+// --- Personas --------------------------------------------------------------
+
+.landing-personas {
+  margin: 3em 0;
+}
+
+.persona-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  gap: 1.25em;
+}
+
+.persona-card {
+  padding: 1em 1.2em;
+  background: #f9f9f9;
+  border-left: 3px solid #888;
+  border-radius: 0 4px 4px 0;
+
+  &__title {
+    font-size: 1.05em;
+    margin: 0 0 0.4em;
+    line-height: 1.3;
+  }
+
+  &__hook {
+    font-size: 0.95em;
+    margin: 0;
+  }
+}
+
+// --- Approach --------------------------------------------------------------
+
+.landing-approach {
+  margin: 3em 0;
+
+  &__links {
+    margin-top: 1em;
+  }
+}
+
+// --- Latest posts ----------------------------------------------------------
+
+.latest-posts {
+  margin: 3em 0;
+
+  &__all {
+    text-align: right;
+    margin-top: 1em;
+  }
+}
+
+.post-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  gap: 1.25em;
+}
+
+.post-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em 1.2em;
+  background: #fff;
+
+  &__title {
+    font-size: 1.1em;
+    margin: 0 0 0.3em;
+    line-height: 1.3;
+  }
+
+  &__meta {
+    font-size: 0.85em;
+    color: #777;
+    margin: 0 0 0.6em;
+  }
+
+  &__excerpt {
+    margin: 0 0 0.8em;
+    font-size: 0.95em;
+  }
+
+  &__read {
+    font-size: 0.9em;
+  }
+}
+
+// --- Track record teaser ---------------------------------------------------
+
+.track-record-teaser {
+  margin: 3em 0;
+
+  &__link {
+    margin-top: 0.5em;
+  }
+}
+
+// --- CTA footer ------------------------------------------------------------
+
+.cta-footer {
+  margin: 3em 0 2em;
+  padding: 1.5em 1.75em;
+  background: #f5f5f5;
+  border-radius: 6px;
+
+  &__intro {
+    font-size: 1.1em;
+    margin: 0 0 1em;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  &__mail {
+    font-size: 0.95em;
+    color: #555;
+  }
+}
+
+// --- Dark mode overrides ---------------------------------------------------
+
+html[data-theme="dark"] {
+  .landing-hero__tagline {
+    color: #bbb;
+  }
+
+  .section-heading {
+    border-bottom-color: #2a2a4a;
+  }
+
+  .pillar-card,
+  .post-card {
+    background: #141422;
+    border-color: #2a2a4a;
+  }
+
+  .pillar-card__desc,
+  .post-card__meta,
+  .post-card__excerpt {
+    color: #c0c0c0;
+  }
+
+  .persona-card {
+    background: #16213e;
+    border-left-color: #6db3f2;
+  }
+
+  .cta-footer {
+    background: #16213e;
+
+    &__mail {
+      color: #bbb;
+    }
+  }
+}
+
+// ============================================================================
+// AsciiDoc admonitions (NOTE / TIP / WARNING / CAUTION / IMPORTANT)
+// Asciidoctor renders these as a 2-column table; MM's generic table styles
+// collapse the layout so label and content overlap. Reset and re-style.
+// ============================================================================
+
+.admonitionblock {
+  margin: 1.5em 0;
+
+  > table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    margin: 0;
+
+    > tbody > tr > td {
+      border: none;
+      vertical-align: top;
+      padding: 0;
+    }
+
+    > tbody > tr > td.icon {
+      width: 6em;
+      padding: 0.3em 1em 0.3em 0;
+      text-align: center;
+
+      .title {
+        font-weight: bold;
+        color: #555;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        line-height: 1.4;
+      }
+    }
+
+    > tbody > tr > td.content {
+      padding: 0.3em 0 0.3em 1em;
+      border-left: 3px solid #ccc;
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.note    > table > tbody > tr > td.content { border-left-color: #5a9bd4; }
+  &.tip     > table > tbody > tr > td.content { border-left-color: #5cb85c; }
+  &.warning > table > tbody > tr > td.content { border-left-color: #f0ad4e; }
+  &.caution > table > tbody > tr > td.content,
+  &.important > table > tbody > tr > td.content { border-left-color: #d9534f; }
+}
+
+html[data-theme="dark"] .admonitionblock {
+  > table > tbody > tr > td.icon .title {
+    color: #ccc;
+  }
+  > table > tbody > tr > td.content {
+    border-left-color: #555;
+  }
+}
+
+// ============================================================================
+// Inline-Code-Links: look like plain code by default, reveal as link only
+// on hover. Uses :has() (modern browsers: Chrome 105+, Safari 15.4+, Firefox 121+).
+// ============================================================================
+
+a:has(> code) {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+a:has(> code):hover {
+  text-decoration: underline;
+  color: inherit !important;
 }

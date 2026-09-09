@@ -1,0 +1,49 @@
+---
+title: "Track Record"
+permalink: /track-record/
+---
+
+35 Jahre im Maschinenraum komplexer technischer Systeme — quer durch
+Branchen, Größenordnungen und Technologie-Generationen.
+
+== Branchen (Auswahl)
+
+* Automotive
+* Banking / Financial Services
+* Telekommunikation
+* Industrie-IoT
+* Energie
+* Handel / Retail
+* Logistik
+* Public Sector
+
+== Technologie-Schwerpunkte (Auswahl)
+
+* *Embedded*: Yocto/OpenEmbedded, Linux-BSP, Cross-Compile-Toolchains,
+  OTA-Update-Systeme, C/C++/Rust
+* *Plattformen*: SAP-as-a-Service, RZ-Architektur, verteilte Systeme,
+  Container-Infrastruktur
+* *Engineering-Methodik*: arc42, req42, ADRs, C4, docs-as-code,
+  docToolchain, PlantUML
+* *Programmiersprachen / Stacks*: Perl/CPAN (Long-time Maintainer),
+  Ruby, Python, JavaScript, Shell
+* *Betriebssysteme*: Linux (mehrere Distributionen + Yocto-Custom),
+  NetBSD (Committer seit 2008), historisch AIX, Solaris, HP-UX
+
+== Open-Source-Engagement
+
+* *NetBSD Committer* seit 2008 — pkgsrc, Security-Patches, Portierung
+  über AIX, Solaris, HP-UX, Linux, macOS, Windows und die BSDs
+* *CPAN Author* 2007–2022 — u. a. SQL::Statement, Hash::MoreUtils,
+  DBI::Test
+* *Yocto / OpenEmbedded Contributor* seit 2015 — OE-Core-Pakete,
+  eigene Layer (meta-cpan, meta-sysinit, meta-prd-flash)
+* *tpo42 Framework* (2025–) — Open-Source-Framework für Technical
+  Product Owner
+
+[NOTE]
+====
+Kundennamen werden hier bewusst nicht genannt (Diskretion + bestehende
+NDAs). Für eine projektspezifische Referenzliste im Erstgespräch:
+link:/kontakt/[Termin vereinbaren].
+====

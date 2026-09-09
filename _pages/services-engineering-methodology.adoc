@@ -1,0 +1,245 @@
+---
+title: "Engineering-Methodik"
+permalink: /services/engineering-methodology/
+service_name: "Engineering-Methodik"
+service_description: "PARIS statt RACI, Responsible Engineering Credo, docs-as-code mit arc42 und req42, tpo42 als integriertes Framework für Technical Product Owner. Methodik als Werkzeug für klarere Verantwortlichkeit und bessere Entscheidungen — Coaching, Practice Review und Schulung für Teams, die ihre Methoden-Diskussion beenden wollen, um wieder zur Arbeit zu kommen."
+service_type: "Engineering Methodology Consulting & Coaching"
+faqs:
+  - q: "Was unterscheidet dieses Angebot vom Plattform-Architektur-Angebot?"
+    a: |
+      Dieses Angebot vermittelt Methode, das Plattform-Architektur-
+      Angebot wendet sie an. Konkret: Hier coache und schule ich Teams,
+      hole eine Practice Review aus dem Außenblick, führe arc42,
+      req42, req4arc und PARIS als Werkzeuge ein. Dort entstehen aus
+      diesen Werkzeugen konkrete Architektur-Artefakte am echten
+      System. Wer eine Methodik einführen oder seine
+      Engineering-Praxis verbessern will, ist hier richtig. Wer eine
+      konkrete Architekturarbeit am System braucht, eher beim
+      Plattform-Architektur-Angebot.
+  - q: "PARIS statt RACI — was ist der Unterschied?"
+    a: |
+      RACI unterscheidet Responsible, Accountable, Consulted, Informed
+      — die Hauptverwechslung passiert in der Praxis zwischen
+      Responsible und Accountable, weil beide oft am selben Tisch
+      sitzen. PARIS schärft die Rollen anders: Performer, Accountable,
+      Reviewer, Informed, Supporter. Reviewer steht explizit
+      unterschieden vom Accountable, Supporter ersetzt das schwammige
+      "Consulted". Das klingt nach Detail-Diskussion, ist aber genau
+      das, was in Engineering-Teams die Frage "wer entscheidet?"
+      verhärtet oder löst. Mehr dazu im Blog-Post zu PARIS in Practice.
+  - q: "Brauche ich tpo42, oder reicht arc42?"
+    a: |
+      arc42 ist ein Architektur-Template — sehr gut, sehr verbreitet,
+      aber bewusst leer an einer Stelle: woher kommen die Anforderungen,
+      die arc42-Kapitel 10 (Qualitätsanforderungen) und 11 (Risiken)
+      voraussetzen? arc42 setzt sie als gegeben voraus. In Projekten
+      ohne dedizierten Product Owner mit Gespür für Anforderungen
+      fällt diese Antwort schwer. tpo42 koppelt req42 (Requirements
+      Engineering) vor und gibt arc42 damit eine belastbare Quelle.
+      Wer arc42 schon erfolgreich anwendet, braucht tpo42 nicht. Wer
+      arc42 anwenden will, aber an der Anforderungsfrage scheitert,
+      bekommt mit tpo42 das fehlende Stück.
+  - q: "Was ist req4arc, und wann passt es besser als req42?"
+    a: |
+      req4arc ist das iSAQB-CPSA-Advanced-Modul „Requirements für
+      Softwarearchitekten" (Hruschka/Starke). Pragmatisches Ziel:
+      Architekten klären selbst die architekturrelevanten Anforderungen
+      — Scope, Qualitätsanforderungen, funktionale Granularität — wenn
+      Product Owner, Business Analysten oder Requirements Engineers
+      fehlen oder unzureichend liefern. Architekten übernehmen damit
+      nicht die volle RE-Rolle, sondern klären gezielt das, was sie
+      für robuste Architekturentscheidungen brauchen. req42
+      (Hruschka/Meuten) ist umgekehrt das umfassendere Framework für
+      agile Anforderungs- und Produkt-Strukturierung mit zwölf
+      Bausteinen — Visionen, Stakeholder, Scope, Backlog,
+      Qualitätsanforderungen, Roadmaps, Risiken und mehr. Auf einer
+      Zeile gesagt: req42 ist das vollständige Werkzeug für die
+      Anforderungs-Verantwortlichen; req4arc ist der
+      architekturrelevante Auszug, den ein Architekt selbst
+      beherrschen muss.
+  - q: "Was bedeutet Responsible Engineering konkret?"
+    a: |
+      Responsible Engineering ist ein Credo, kein Methodik-Katalog:
+      Wer ein technisches System baut, trägt Mitverantwortung für
+      seine Folgen — funktional, sozial, ökologisch, ökonomisch.
+      Praktisch heißt das: Risiken stehen vor Funktionen in der
+      Dokumentation, Quality-Gates haben Vetorecht, und "wir liefern
+      erst mal und fixen später" ist keine zulässige Strategie. Mehr
+      im Blog-Post zum Responsible Engineering Credo.
+  - q: "Wie sieht ein Practice Review aus, ohne dass das Team es als Audit empfindet?"
+    a: |
+      Ein Practice Review schaut auf die Engineering-Praxis von außen
+      — mit dem Ziel, blinde Flecken sichtbar zu machen, nicht
+      Schuldige zu finden. Der Unterschied zur Audit-Wahrnehmung
+      steckt im Setup: keine Note, keine Punkteliste, sondern
+      strukturierte Gespräche mit dem Team, gemeinsame Begehung der
+      Artefakte, klare Trennung zwischen "das funktioniert, weil X"
+      und "das wackelt, weil Y". Wenn das Team weiß, was rauskommt —
+      und dass es mitentscheidet, was damit passiert — verliert das
+      Review sein Audit-Geschmäckle.
+---
+
+PARIS statt RACI, Responsible Engineering Credo, docs-as-code mit
+arc42 und req42, tpo42 als integriertes Framework für Technical
+Product Owner. Methodik als Werkzeug für klarere Verantwortlichkeit
+und bessere Entscheidungen — kein Selbstzweck. Coaching, Practice
+Review und Schulung für Teams, die ihre Methoden-Diskussion endlich
+beenden wollen, um wieder zur Arbeit zu kommen.
+
+Methodik ist nie Selbstzweck — sie ist das Knochengerüst, das eine
+Engineering-Praxis aufrecht hält, wenn das Tagesgeschäft sie biegen
+will. Eine Architekturentscheidung ohne ADR wird nach drei Monaten
+Folklore; ein RACI-Diagramm ohne PARIS-Schärfe verwischt
+"Accountable" und "Responsible"; eine Engineering-Praxis ohne
+Responsible-Engineering-Reflexion liefert schnell und zerfällt
+langsam. Meine Rolle: die richtigen Werkzeuge vermitteln und einüben,
+damit Ihr Team selbständig mit ihnen arbeitet — nicht, damit Sie auf
+mich angewiesen bleiben.
+
+== In welchen Rollen ich hier unterstütze
+
+* link:/roles/coach/[Coach] — Team-Befähigung in PARIS, arc42, req42,
+  req4arc, tpo42, docs-as-code; Onboarding-Pfade in eine gelebte
+  Methodik-Praxis
+* link:/roles/reviewer/[Reviewer] — Practice Review der bestehenden
+  Engineering-Praxis vom Außenstandpunkt, Verbesserungspfade
+  aufzeigen
+* link:/roles/sparring-partner/[Sparringspartner] —
+  Methodik-Entscheidungen sortieren, Optionen durchspielen, blinde
+  Flecken offenlegen
+* link:/roles/technical-product-owner/[Technical Product Owner] —
+  req42, arc42, req4arc und tpo42 in einer Rolle gelebt; als Vorbild
+  für eine zu coachende Position im Kundenteam
+
+Welche Rolle gerade passt, ergibt sich aus der Situation.
+
+== Wann das passt
+
+// --- Cluster: Verantwortlichkeit klären ---
+* Wenn Sie die RACI-Matrix aus Pflichtgefühl pflegen, aber niemand
+  mehr versteht, was sie steuert
+* Wenn niemand mehr weiß, wer eigentlich entscheidet — und alle
+  warten auf den anderen
+* Wenn Architekturentscheidungen ohne nachvollziehbare Begründung
+  im Raum stehen
+// --- Cluster: Engineering-Praxis prüfen & verbessern ---
+* Wenn die Engineering-Praxis "schon immer so läuft" und niemand
+  mehr weiß, warum
+* Wenn ein Practice Review von außen helfen würde, blinde Flecken
+  zu erkennen, ohne dass das Team sich auditiert fühlt
+* Wenn eine Entwicklungs-Mannschaft den Sprung in docs-as-code,
+  validate-first oder ADR-Praxis schaffen will und Begleitung für
+  die ersten Iterationen braucht
+// --- Cluster: Methodik-Werkzeuge einführen ---
+* Wenn arc42, req42 oder tpo42 ein Team unterstützen sollen — aber
+  niemand sicher ist, wie der Einstieg aussieht
+* Wenn die Methodik-Diskussion mehr Zeit frisst als die Methodik
+  selbst
+* Wenn ein Coaching für PARIS, Responsible Engineering oder
+  docs-as-code helfen würde, eine gemeinsame Sprache im Team zu
+  finden
+
+== Aus meiner Praxis
+
+https://www.tpo42.de[tpo42] — Open-Source-Framework, das req42
+(Requirements Engineering) mit arc42 (Architekturdokumentation) für
+Technical Product Owner als integriertes Werkzeug verbindet.
+Entstanden aus der wiederkehrenden Projektnot, dass arc42
+funktionale, nicht-funktionale und Qualitätsanforderungen voraussetzt,
+aber nichts darüber sagt, wie sie entstehen.
+
+Eigene Veröffentlichungen zur Methodik finden sich im
+link:/blog/[Blog] — darunter Beiträge zu *PARIS in Practice* (PARIS
+als Alternative zu RACI) und zum *Responsible Engineering Credo*.
+
+Plus Beiträge zur Semantic-Anchors-Library — eine offene Sammlung
+methodischer Anchors für Engineering-Praxis (von MECE und NVC über
+ADR-nach-Nygard und BLUF bis zur sokratischen Methode). Repository
+unter https://llm-coding.github.io/Semantic-Anchors/, maintained von
+Ralf D. Müller; einige der Anchors habe ich mit eingebracht. Auf
+Sparring-Engagements anderer Angebote wird dort intern verwiesen,
+damit das Methoden-Repertoire an einer Stelle gepflegt bleibt.
+
+Konkrete Anwendung der Methodik in Projekten zeigt der
+link:/track-record/[Track Record] — Communities of Practice nach
+Spotify-Modell in einer Konzern-IT, Architektur-Manifest als
+Leitplanke, arc42-Dokumentation als lebender Prozess integriert ins
+bestehende Wissensmanagement.
+
+== Häufige Fragen
+
+[qanda]
+Was unterscheidet dieses Angebot vom Plattform-Architektur-Angebot?::
+Dieses Angebot *vermittelt* Methode, das
+link:/services/platform-architecture/[Plattform-Architektur]-Angebot
+*wendet* sie an. Konkret: Hier coache und schule ich Teams, hole eine
+Practice Review aus dem Außenblick, führe arc42, req42, req4arc und
+PARIS als Werkzeuge ein. Dort entstehen aus diesen Werkzeugen
+konkrete Architektur-Artefakte am echten System. Wer eine Methodik
+einführen oder seine Engineering-Praxis verbessern will, ist hier
+richtig. Wer eine konkrete Architekturarbeit am System braucht, eher
+beim Plattform-Architektur-Angebot.
+
+PARIS statt RACI — was ist der Unterschied?::
+RACI unterscheidet *Responsible, Accountable, Consulted, Informed* —
+die Hauptverwechslung passiert in der Praxis zwischen Responsible und
+Accountable, weil beide oft am selben Tisch sitzen. PARIS schärft die
+Rollen anders: *Performer, Accountable, Reviewer, Informed,
+Supporter*. Reviewer steht explizit unterschieden vom Accountable,
+Supporter ersetzt das schwammige "Consulted". Das klingt nach
+Detail-Diskussion, ist aber genau das, was in Engineering-Teams die
+Frage "wer entscheidet?" verhärtet oder löst. Mehr dazu im
+link:/blog/[Blog-Post zu PARIS in Practice].
+
+Brauche ich tpo42, oder reicht arc42?::
+arc42 ist ein Architektur-Template — sehr gut, sehr verbreitet, aber
+bewusst leer an einer Stelle: woher kommen die Anforderungen, die
+arc42-Kapitel 10 (Qualitätsanforderungen) und 11 (Risiken)
+voraussetzen? arc42 setzt sie als gegeben voraus. In Projekten ohne
+dedizierten Product Owner mit Gespür für Anforderungen fällt diese
+Antwort schwer. tpo42 koppelt req42 (Requirements Engineering) vor
+und gibt arc42 damit eine belastbare Quelle. Wer arc42 schon
+erfolgreich anwendet, braucht tpo42 nicht. Wer arc42 anwenden will,
+aber an der Anforderungsfrage scheitert, bekommt mit tpo42 das
+fehlende Stück.
+
+Was ist req4arc, und wann passt es besser als req42?::
+req4arc ist das iSAQB-CPSA-Advanced-Modul „Requirements für
+Softwarearchitekten" (Hruschka/Starke). Pragmatisches Ziel:
+*Architekten klären selbst* die architekturrelevanten Anforderungen —
+Scope, Qualitätsanforderungen, funktionale Granularität — wenn
+Product Owner, Business Analysten oder Requirements Engineers fehlen
+oder unzureichend liefern. Architekten übernehmen damit *nicht* die
+volle RE-Rolle, sondern klären gezielt das, was sie für robuste
+Architekturentscheidungen brauchen. req42 (Hruschka/Meuten) ist
+umgekehrt das umfassendere Framework für agile Anforderungs- und
+Produkt-Strukturierung mit zwölf Bausteinen — Visionen, Stakeholder,
+Scope, Backlog, Qualitätsanforderungen, Roadmaps, Risiken und mehr.
+Auf einer Zeile gesagt: req42 ist das vollständige Werkzeug für die
+Anforderungs-Verantwortlichen; req4arc ist der architekturrelevante
+Auszug, den ein Architekt selbst beherrschen muss.
+
+Was bedeutet Responsible Engineering konkret?::
+Responsible Engineering ist ein Credo, kein Methodik-Katalog: Wer
+ein technisches System baut, trägt Mitverantwortung für seine
+Folgen — funktional, sozial, ökologisch, ökonomisch. Praktisch
+heißt das: Risiken stehen *vor* Funktionen in der Dokumentation,
+Quality-Gates haben Vetorecht, und "wir liefern erst mal und fixen
+später" ist keine zulässige Strategie. Mehr im
+link:/blog/[Blog-Post zum Responsible Engineering Credo].
+
+Wie sieht ein Practice Review aus, ohne dass das Team es als Audit empfindet?::
+Ein Practice Review schaut auf die Engineering-Praxis von außen —
+mit dem Ziel, blinde Flecken sichtbar zu machen, nicht Schuldige zu
+finden. Der Unterschied zur Audit-Wahrnehmung steckt im Setup: keine
+Note, keine Punkteliste, sondern strukturierte Gespräche mit dem
+Team, gemeinsame Begehung der Artefakte, klare Trennung zwischen
+"das funktioniert, weil X" und "das wackelt, weil Y". Wenn das Team
+weiß, was rauskommt — und dass es mitentscheidet, was damit
+passiert — verliert das Review sein Audit-Geschmäckle.
+
+== Reden wir!
+
+Erstgespräch, Methodik-Sparring oder einfach kennenlernen —
+link:/kontakt/[Termin vereinbaren] oder
++++<span class="email-protect" data-user="rehsack+de" data-domain="gmail.com" data-subject="Anfrage zu Engineering-Methodik über rehsack.de" data-body="Hallo Jens Rehsack,&#10;&#10;ich würde Sie gern zu einem Gespräch über mein Methodik-Vorhaben kennenlernen.&#10;&#10;(Kurze Beschreibung)&#10;&#10;Viele Grüße" data-text="per e-Mail">[JavaScript erforderlich]</span>+++.

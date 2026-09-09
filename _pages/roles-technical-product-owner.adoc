@@ -1,0 +1,83 @@
+---
+title: "Technical Product Owner"
+permalink: /roles/technical-product-owner/
+---
+
+Anforderungen (req42), Architektur (arc42) und bei Bedarf
+Betriebs-Modellierung in einer Rolle. Antwort auf den
+KMU-Ressourcen-Engpass: statt eines Requirements Engineers neben einem
+Architekten neben einem Ops-Owner trägt ein Technical Product Owner
+die Substanz zusammenhängend. Methodisch unterlegt durch das
+https://github.com/tpo42/tpo42-framework[tpo42-Framework] mit
+https://github.com/rehsack/tpo42-templates[Templates]. Hands-On,
+nicht Elfenbeinturm.
+
+== Was ein TPO trägt
+
+Der Technical Product Owner verbindet drei Disziplinen, die in
+größeren Organisationen oft auf drei Schultern verteilt sind:
+
+* *Anforderungen klären und schreiben* — req42 als Strukturrahmen,
+  Stakeholder ernst nehmen, Annahmen explizit machen
+* *Architektur entwerfen und dokumentieren* — arc42 als Strukturrahmen,
+  ADRs für tragende Entscheidungen, Bauplan-Disziplin
+* *Betrieb mitdenken* — vom ersten Konzept an, nicht erst nach dem
+  ersten Release
+
+Die Rolle ist *integriert*, nicht aufgeteilt. Ein TPO entscheidet
+keine Anforderung, ohne ihre Architektur-Konsequenz mitzudenken — und
+keinen Architektur-Pfad, ohne die Anforderung dahinter verstanden zu
+haben.
+
+== Wann diese Rolle passt
+
+* Wenn ein KMU einen Product Owner braucht, der technische Tiefe trägt
+  — oder einen Architekten, der Stakeholder-Verantwortung übernimmt
+* Wenn Requirements Engineering und Architektur bisher organisatorisch
+  getrennt waren und an der Schnittstelle Reibung entsteht
+  (Annahmen-Drift, doppelte Arbeit, gegenseitige Schuldzuweisung)
+* Wenn ein bestehendes Produkt unter CRA-Druck gerät und niemand
+  vorhanden ist, der Engineering-Realität und Compliance-Anforderung
+  zugleich verantworten kann
+* Wenn ein neues technisches Produkt entsteht und das Team noch nicht
+  in der Lage ist, die TPO-Rolle selbst zu tragen — Mandat: hands-on
+  vorgehen *und* nebenher das Team befähigen, die Rolle übernehmen
+  zu können
+
+== Hands-On, nicht Elfenbeinturm
+
+Ein TPO sitzt nicht im Büro neben dem CTO und produziert
+PowerPoint-Folien. Konkret bedeutet die Rolle: Stakeholder-Interviews
+führen, Anforderungen in req42-Form bringen, Architektur-Workshops
+moderieren, ADRs mitformulieren, mit dem Engineering-Team an konkreten
+Schnittstellen arbeiten — und sich nicht zu schade sein, an einer
+Recipe, einem Diagramm oder einer SBOM selbst Hand anzulegen, wenn es
+die Erkenntnis im Team beschleunigt.
+
+== Methodik: tpo42
+
+Das https://github.com/tpo42/tpo42-framework[tpo42-Framework] verbindet
+req42 (Anforderungs-Strukturrahmen) und arc42
+(Architektur-Strukturrahmen) zu einer integrierten Methodik für die
+TPO-Rolle. Die https://github.com/rehsack/tpo42-templates[tpo42-Templates]
+liefern den Werkzeugkasten für konkrete Anwendung — von der
+Architecture Inception Canvas bis zu req42- und arc42-Kapitel-Vorlagen
+mit docToolchain-Anbindung. Mehr unter https://www.tpo42.de[tpo42.de].
+
+== Verwandte Rollen
+
+* link:/roles/architect/[Architekt] — der TPO trägt die Architekten-Rolle,
+  aber nicht nur sie
+* link:/roles/coach/[Coach] — Befähigung interner TPOs, wenn der
+  Kunde die Rolle nicht dauerhaft extern besetzen will
+* link:/roles/sparring-partner/[Sparringspartner] — wenn der Kunde
+  schon einen internen TPO hat, aber Reflexion und zweite Meinung
+  braucht
+
+== Relevante Themen
+
+link:/services/engineering-methodology/[Engineering-Methodik],
+link:/services/platform-architecture/[Plattform- & Systemarchitektur],
+link:/services/embedded-yocto/[Embedded & Yocto],
+link:/services/distributed-systems/[Verteilte Systeme & Plattformen],
+link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller]

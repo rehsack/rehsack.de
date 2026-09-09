@@ -1,0 +1,217 @@
+---
+title: "Bare-Metal & Multi-Controller"
+permalink: /services/bare-metal-multi-controller/
+service_name: "Bare-Metal- und Multi-Controller-Engineering"
+service_description: "Architektur und Lead-Development für systemnahe Embedded-Systeme — STM32, ADµCM360, Cortex-M-Familie, Bare-Metal-Firmware, s6-rc-Startup und Co-Prozessor-Kommunikation in einem Gerät. 35 Jahre system-nahe Entwicklung (seit 1991), Architekt + Lead-Developer in Personalunion ist hier die natürliche Konfiguration. Maintainer des Open-Source-Layers meta-sysinit."
+service_type: "Bare-Metal & Multi-Controller Embedded Engineering"
+faqs:
+  - q: "Was unterscheidet dieses Angebot vom Embedded-&-Yocto-Angebot?"
+    a: |
+      Yocto baut die Linux-Plattform-Schicht eines Geräts —
+      reproduzierbar, layer-orientiert, mit OTA-Update-Pfaden. Dieses
+      Angebot trägt das, was *unter* der Yocto-Schicht liegt: die
+      Cortex-M-Controller, die Bare-Metal-Firmware, der Startup-Code
+      bevor das init-System läuft, die Kommunikation zwischen einem
+      M0-Imaging-Prozessor und dem Linux-Edge im selben Gerät. In der
+      Praxis verschränken sich beide Angebote oft — ein Gerät hat
+      sowohl Yocto-Linux als auch Bare-Metal-Controller, und beide
+      Schichten müssen aufeinander passen. Trotzdem sind es zwei
+      verschiedene Disziplinen mit eigenen Werkzeugen und eigenem
+      Mental-Model.
+  - q: "Was bedeutet Architekt + Lead-Developer in Personalunion konkret?"
+    a: |
+      Es bedeutet, dass ich nicht nur das System-Diagramm zeichne,
+      sondern auch den kritischen Code selbst schreibe — den
+      s6-rc-Startup, den HAL für den Co-Prozessor, die
+      Sensor-Aufbereitung auf dem ADµCM360. Bei systemnahen
+      Technologien funktioniert die saubere Architektur-Engineering-
+      Trennung nicht: die Erkenntnis liegt im Code, und der Code
+      liegt im Architektur-Entwurf. Wer beides trennt, baut Diagramme,
+      die in der ersten Latenz-Spitze brechen, oder Code, der ohne
+      Architektur-Begründung im Raum steht. Dieses Angebot ist genau
+      für die Situationen gedacht, in denen Personalunion die ehrliche
+      Konfiguration ist.
+  - q: "Welche Controller und SoCs kennen Sie aus der Praxis?"
+    a: |
+      Cortex-M3 (ADµCM360 für Sensor-Aufbereitung), Cortex-M7 (STM32H7
+      für Signalverarbeitung), Cortex-M4 (NXP Kinetis), Xilinx ZYNQ
+      7020 (PS+PL-Architektur), NXP i.MX6/i.MX8, NXP QorIQ/Layerscape
+      (LX2088A, LX2080A-RDB, LX2160A) mit Secure Boot, Intel Baytrail
+      (Industrial PC), BeagleBone (AM335x mit PRU). Plus klassische
+      ARM-Cortex-A-Linux-Edges in Yocto-Kontexten. Die Liste ist
+      nicht erschöpfend; das Muster ist konsistent: heterogene
+      Prozessoren, die zusammen ein Gerät bilden.
+  - q: "Wo ist die Grenze zwischen Bare-Metal und Yocto-Linux in einem Gerät?"
+    a: |
+      Die Grenze liegt selten an einer SoC-Pin — sie liegt am
+      Architektur-Schnitt zwischen *Soft-Realtime und Best-Effort*,
+      zwischen Sicherheitskontext und Anwendungslogik, zwischen
+      Lebenszyklus des Bare-Metal-Firmware-Updates und Lebenszyklus
+      der Linux-Plattform-Updates. Ein gutes Multi-Controller-Design
+      legt diese Grenzen *vor* der Hardware-Auswahl fest, nicht nach
+      der ersten Inbetriebnahme.
+  - q: "Übernehmen Sie auch Reverse Engineering von gewachsener Firmware?"
+    a: |
+      Ja, das ist häufig der Einstieg. Eine über zehn Jahre gewachsene
+      Firmware-Landschaft ohne dokumentierte Schnittstellen ist kein
+      Einzelfall — der erste Schritt ist meist: lesen, was im Code
+      tatsächlich steht, gegen das vergleichen, was im Team noch
+      gewusst wird, und beides in eine arc42/req42-Dokumentation
+      gießen, die als Entscheidungsgrundlage für die
+      Modernisierungsstrategie taugt. Was dabei nicht passiert: stille
+      Heroentaten — die Erkenntnisse bleiben sichtbar im Team.
+---
+
+Architektur und Lead-Development für systemnahe Embedded-Systeme —
+STM32, ADµCM360, Cortex-M-Familie, Bare-Metal-Firmware, s6-rc-Startup
+und Co-Prozessor-Kommunikation in einem Gerät. 35 Jahre system-nahe
+Entwicklung (seit 1991), Architekt + Lead-Developer in Personalunion
+ist hier die natürliche Konfiguration, nicht der Antipattern.
+Maintainer des Open-Source-Layers
+link:/projects/meta-sysinit/[meta-sysinit] (s6, daemontools, runit als
+Alternative zum systemd-Standard).
+
+Multi-Controller-Architektur ist die Disziplin, an den Brüchen
+zwischen Prozessor-Welten lesbar zu bleiben — zwischen
+Cortex-M-Bare-Metal und Linux-Edge, zwischen Soft-Realtime und
+Best-Effort, zwischen Sicherheits-Controller und Anwendungslogik. Wer
+hier nur Architektur diktiert, ohne den Bare-Metal-Code zu kennen,
+schreibt schöne Diagramme, die im Feld an der ersten Latenz-Spitze
+brechen. Meine Rolle: das System architektonisch entwerfen und
+gleichzeitig den kritischen Code selbst schreiben, wenn die Erkenntnis
+dort liegt.
+
+== In welchen Rollen ich hier unterstütze
+
+* link:/roles/architect/[Architekt] + link:/roles/lead-engineer/[Lead
+  Engineer] in Personalunion — Multi-Controller-Architektur entwerfen
+  *und* den kritischen Bare-Metal-/HAL-/Startup-Code selbst schreiben;
+  Markenzeichen dieses Angebots
+* link:/roles/reviewer/[Reviewer] — bestehende Firmware-Stacks,
+  Inter-Processor-Kommunikation und Startup-Pfade prüfen,
+  Modernisierungsoptionen aufzeigen
+* link:/roles/sparring-partner/[Sparringspartner] —
+  Architektur-Entscheidungen zwischen Bare-Metal und Linux
+  durchspielen, Trade-offs zu Realtime, Sicherheit und Update-Pfaden
+* link:/roles/coach/[Coach] — Bare-Metal-Patterns, s6-rc-Startup-
+  Konzepte, Inter-Processor-Protokolle im Team einüben
+* link:/roles/technical-product-owner/[Technical Product Owner] —
+  req42, arc42, req4arc und Betriebs-Modellierung für
+  Multi-Controller-Systeme
+
+Welche Rolle gerade passt, ergibt sich aus der Situation.
+
+== Wann das passt
+
+// --- Cluster: Multi-Controller-System ---
+* Wenn Ihr Gerät mehrere Prozessor-Welten in sich trägt — etwa einen
+  Cortex-M-Controller für Sensor-/Sicherheits-Aufgaben und einen
+  Linux-Edge für Anwendungslogik — und die Architektur an den
+  Schnittstellen unklar ist
+* Wenn ein Co-Prozessor (M0 für Imaging, M3 für ADC-Vorverarbeitung)
+  einen architektonisch sauberen HAL braucht, statt direkt
+  hardware-nah angesprochen zu werden
+* Wenn Soft-Realtime in einem Subsystem die Gesamtarchitektur trägt
+// --- Cluster: Bare-Metal & Sensor-Stacks ---
+* Wenn Sie einen Sensor (ADµCM360, STM32-Familie) architektonisch
+  einbinden wollen — von der Spec über die Firmware bis zur
+  Schnittstelle nach oben
+* Wenn s6-rc, daemontools oder ein klassisches sysv-init den
+  systemd-Standard ersetzen sollen — etwa für Determinismus oder
+  Lifecycle-Klarheit
+* Wenn Ihre Bare-Metal-Firmware über mehr als zehn Jahre gewachsen
+  ist und keine belastbare Architekturdokumentation hat
+// --- Cluster: Architekt+Lead-Developer-Personalunion ---
+* Wenn das Projekt jemanden braucht, der gleichzeitig die Architektur
+  trägt *und* den kritischen Code selbst schreibt — weil eine
+  Trennung den Erkenntnisgewinn ausbremst
+* Wenn ein hands-on tätiger Senior fehlt, der bei systemnahen
+  Entscheidungen mit Code-Beleg argumentiert und nicht mit
+  Folienpräsentationen
+// --- Cluster: Hardware ↔ Linux-Edge ---
+* Wenn die Schnittstelle zwischen Cortex-M-Welt und Linux-Edge im
+  selben Gerät sauber definiert werden muss — Protokoll, Timing,
+  Fehlerbehandlung, Update-Strategie
+* Wenn ein Reverse Engineering einer gewachsenen Firmware-Landschaft
+  Grundlage für die Modernisierungs-Strategie sein soll
+
+== Aus meiner Praxis
+
+link:/projects/meta-sysinit/[meta-sysinit] — eigener Yocto-Layer mit
+s6, daemontools, runit und klassischem sysv-init als Alternativen zum
+systemd-Standard. Vision: divide et impera, auf das absolut
+Wesentliche reduziert. Ein Init-System, das man versteht — und das
+deterministisch tut, was man von ihm erwartet.
+
+Konkrete Multi-Controller- und Bare-Metal-Praxis findet sich
+verkürzt im link:/track-record/[Track Record] —
+Multi-MCU-Kameraplattform (Inspektionstechnik, 2024–2026:
+Cortex-M-Co-Prozessoren plus Boost.Asio-HAL), Bare-Metal-IO-Module
+und CPU-Modul über 15 Jahre gewachsener Messtechnik-Firmware
+(2025–laufend: Cortex-M3/M7, ADµCM360, Reverse Engineering,
+Unit-Test-Infrastruktur mit GTest), Edge-Gateway mit Co-Prozessoren
+und Datenpfaden in die Cloud (2022), Soft-SWD auf PRU für
+Steuergeräte-Updates (Automotive, 2019), Yocto-Plattform-Stabilisierung
+mit mmap-basiertem Low-Latency Data Recorder (Energiewirtschaft, 2023).
+
+== Häufige Fragen
+
+[qanda]
+Was unterscheidet dieses Angebot vom Embedded-&-Yocto-Angebot?::
+Yocto baut die *Linux-Plattform-Schicht* eines Geräts —
+reproduzierbar, layer-orientiert, mit OTA-Update-Pfaden. Dieses
+Angebot trägt das, was *unter* der Yocto-Schicht liegt: die
+Cortex-M-Controller, die Bare-Metal-Firmware, der Startup-Code bevor
+das init-System läuft, die Kommunikation zwischen einem
+M0-Imaging-Prozessor und dem Linux-Edge im selben Gerät. In der
+Praxis verschränken sich beide Angebote oft — ein Gerät hat sowohl
+Yocto-Linux als auch Bare-Metal-Controller, und beide Schichten
+müssen aufeinander passen. Trotzdem sind es zwei verschiedene
+Disziplinen mit eigenen Werkzeugen und eigenem Mental-Model.
+
+Was bedeutet Architekt + Lead-Developer in Personalunion konkret?::
+Es bedeutet, dass ich nicht nur das System-Diagramm zeichne, sondern
+auch den kritischen Code selbst schreibe — den s6-rc-Startup, den HAL
+für den Co-Prozessor, die Sensor-Aufbereitung auf dem ADµCM360. Bei
+systemnahen Technologien funktioniert die saubere
+*Architektur-Engineering-Trennung* nicht: die Erkenntnis liegt im
+Code, und der Code liegt im Architektur-Entwurf. Wer beides trennt,
+baut Diagramme, die in der ersten Latenz-Spitze brechen, oder Code,
+der ohne Architektur-Begründung im Raum steht. Dieses Angebot ist
+genau für die Situationen gedacht, in denen Personalunion die
+ehrliche Konfiguration ist.
+
+Welche Controller und SoCs kennen Sie aus der Praxis?::
+Cortex-M3 (ADµCM360 für Sensor-Aufbereitung), Cortex-M7 (STM32H7 für
+Signalverarbeitung), Cortex-M4 (NXP Kinetis), Xilinx ZYNQ 7020
+(PS+PL-Architektur), NXP i.MX6/i.MX8, NXP QorIQ/Layerscape (LX2088A,
+LX2080A-RDB, LX2160A) mit Secure Boot, Intel Baytrail (Industrial
+PC), BeagleBone (AM335x mit PRU). Plus klassische ARM-Cortex-A-
+Linux-Edges in Yocto-Kontexten. Die Liste ist nicht erschöpfend; das
+Muster ist konsistent: heterogene Prozessoren, die zusammen ein
+Gerät bilden.
+
+Wo ist die Grenze zwischen Bare-Metal und Yocto-Linux in einem Gerät?::
+Die Grenze liegt selten an einer SoC-Pin — sie liegt am
+Architektur-Schnitt zwischen *Soft-Realtime und Best-Effort*,
+zwischen Sicherheitskontext und Anwendungslogik, zwischen
+Lebenszyklus des Bare-Metal-Firmware-Updates und Lebenszyklus der
+Linux-Plattform-Updates. Ein gutes Multi-Controller-Design legt diese
+Grenzen *vor* der Hardware-Auswahl fest, nicht nach der ersten
+Inbetriebnahme.
+
+Übernehmen Sie auch Reverse Engineering von gewachsener Firmware?::
+Ja, das ist häufig der Einstieg. Eine über zehn Jahre gewachsene
+Firmware-Landschaft ohne dokumentierte Schnittstellen ist kein
+Einzelfall — der erste Schritt ist meist: lesen, was im Code
+tatsächlich steht, gegen das vergleichen, was im Team noch gewusst
+wird, und beides in eine arc42/req42-Dokumentation gießen, die als
+Entscheidungsgrundlage für die Modernisierungsstrategie taugt. Was
+dabei nicht passiert: stille Heroentaten — die Erkenntnisse bleiben
+sichtbar im Team.
+
+== Reden wir!
+
+Erstgespräch, Architektur-Sparring oder einfach kennenlernen —
+link:/kontakt/[Termin vereinbaren] oder
++++<span class="email-protect" data-user="rehsack+de" data-domain="gmail.com" data-subject="Anfrage zu Bare-Metal und Multi-Controller über rehsack.de" data-body="Hallo Jens Rehsack,&#10;&#10;ich würde Sie gern zu einem Gespräch über mein Multi-Controller-Vorhaben kennenlernen.&#10;&#10;(Kurze Beschreibung)&#10;&#10;Viele Grüße" data-text="per e-Mail">[JavaScript erforderlich]</span>+++.

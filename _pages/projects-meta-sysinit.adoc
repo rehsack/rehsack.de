@@ -1,0 +1,55 @@
+---
+title: "meta-sysinit"
+permalink: /projects/meta-sysinit/
+---
+
+System-Init- und Service-Supervision-Layer für Yocto-Targets
+jenseits des systemd-Standards — gepflegt auf
+https://gitlab.com/meta-layer-collection/meta-sysinit[GitLab].
+
+[quote]
+____
+Divide et impera — Startup und Supervision fokussiert, auf das
+absolut Wesentliche reduziert.
+____
+
+Der Layer bringt für die Domäne Startup & Supervision eine Linie zu
+Yocto & OpenEmbedded, die in der Unix-Philosophie wurzelt:
+_»do one thing, do it right«_. Dan Bernstein begann sie in den
+1990ern mit `qmail` (Antwort auf die Komplexität von Sendmail) und
+legte mit `daemontools` gegen die Tendenz nach, Init und
+Service-Management in einem einzelnen monolithischen Werkzeug zu
+bündeln. Laurent Bercot hat sie in `s6` konsequent zu Ende gedacht
+und in einen ganzheitlichen Ansatz überführt; seine
+https://skarnet.org/software/s6/why.html[Begründung dafür] ist die
+kompakteste Darstellung. `meta-sysinit` macht diesen Strang für
+embedded Linux nutzbar.
+
+Im Kern: Init, Service-Supervision und System-Management sind
+verschiedene Konzerne und gehören nicht in ein einzelnes Werkzeug —
+abgetrennte Verantwortung, auf das absolut Wesentliche reduziert,
+alles selbst in der Hand. Ist der Startup durch, macht das System
+Platz für die Operation-Stage: `exec` statt `spawn`, kein
+Init-Prozess, der dauerhaft mitläuft.
+
+Was das im Layer bedeutet:
+
+* *Fokussierte Init-Alternativen* — `daemontools`, `s6`, `runit` als
+  schlanke, deterministische Alternative zum systemd-Standard
+* *Time-to-Operation* — Boot-Zeiten von 1–2 Sekunden machbar;
+  systemd-Standardprofile starten typisch im zweistelligen
+  Sekundenbereich und fallen auch nach Optimierung selten unter
+  drei Sekunden
+* *Selbstbestimmung statt Defaults* — kein vorkonfiguriertes
+  DNS/NTP/Logging-Subsystem im Hintergrund, das später einzeln
+  deaktiviert werden muss
+* *CVE-Oberfläche unter Kontrolle* — keine versteckten Abhängigkeiten,
+  keine Kaskadeneffekte beim Herauslösen einzelner Komponenten
+* *Konsolidierter Wechsel statt Hand-Migration* — wer im Feld die
+  Supervision-Lösung wechseln will, rollt das im Yocto-Stack als
+  zentrales Layer-Update aus, nicht als Eingriff in einzelne Geräte
+
+== Verwandtes Thema
+
+Diese Substanz wird in der Embedded-Beratung sichtbar:
+link:/services/embedded-yocto/[Embedded & Yocto].

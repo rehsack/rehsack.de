@@ -1,0 +1,24 @@
+---
+title: "Kontakt"
+permalink: /kontakt/
+---
+
+Erstgespräch, Architektur-Sparring oder einfach kennenlernen —
+der Termin ist offen.
+
+== Termin vereinbaren
+
+Direkter Slot über https://cal.eu/rehsack[cal.eu/rehsack] —
+DSGVO-konform, EU-Hosting, keine Anmeldung Ihrerseits erforderlich.
+
+== Direkt per Mail
+
+++++
+<p>
+  E-Mail: <span class="email-protect" data-user="rehsack+de" data-domain="gmail.com">[JavaScript erforderlich]</span>
+</p>
+++++
+
+== Rechtliches
+
+Für Anschrift und Datenschutz: link:/imprint/[Impressum & Datenschutz].

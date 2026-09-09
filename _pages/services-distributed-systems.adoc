@@ -1,0 +1,224 @@
+---
+title: "Verteilte Systeme & Plattformen"
+permalink: /services/distributed-systems/
+service_name: "Verteilte Systeme und Plattformen"
+service_description: "Rechenzentrums- und Cluster-Architektur, Migration und Modernisierung großer Plattformen. Reichweite vom kleinen Self-hosted Cluster für verteilte Engineering-Teams bis zum Enterprise-Stack. Erfahrung in heterogenen Unix-/Linux-Umgebungen seit 1993. Vereinzelte Mainframe-Berührung und ein breites Datenbank-Spektrum von Open-Source bis Enterprise. arc42 in RZ-Projekten seit 2021. SAP-as-a-Service als Tiefen-Anker. Maintainer der cross-platform Monitoring-Bausteine libstatgrab und smart-snmpd."
+service_type: "Distributed Systems & Platform Architecture Consulting"
+faqs:
+  - q: "Was unterscheidet dieses Angebot vom Plattform-Architektur-Angebot?"
+    a: |
+      Verteilte Systeme & Plattformen ist der Rechenzentrums-Fokus
+      innerhalb des breiteren Architektur-Spektrums: Konsolidierung,
+      Migration, Cloud-Native, große Plattformen.
+      Plattform-Architektur trägt zusätzlich die Strecke vom
+      Eindraht-Bus über Edge bis ins Rechenzentrum mit
+      Stakeholder-Brücke. Wer ein konkretes RZ-Vorhaben oder eine
+      SAP-/Cloud-Migration hat, ist hier richtig. Wer eine
+      durchgängige Architektur vom Sensor bis zum Backend braucht,
+      eher beim Plattform-Architektur-Angebot.
+  - q: "Gehört Disaster Recovery dazu?"
+    a: |
+      Nein, nicht als Spezialgebiet. Hochverfügbarkeit (HACMP,
+      Kubernetes-Cluster) und Backup-Strategien gehören zur
+      Architektur, die ich verantworte — aber
+      Disaster-Recovery-Spezialwissen (RPO/RTO-Auslegung,
+      Standort-Failover-Drills, BCM-Zertifizierungen) fällt nicht
+      in mein Repertoire. Wer einen DR-Spezialisten braucht, sollte
+      einen suchen. Wer eine Architektur braucht, die DR überhaupt
+      erst ermöglicht, ist hier richtig.
+  - q: "Cloud, On-Prem oder Hybrid — was entscheidet?"
+    a: |
+      Selten die Technologie, fast immer Governance, Datenflüsse
+      und Operations-Kapazität. Eine SAP-Landschaft mit jahrzehntelang
+      gewachsenen Schnittstellen wandert nicht im Big Bang in die
+      Cloud — sie wandert in Schichten, oder gar nicht. Eine neue
+      Anwendung ohne Legacy-Ballast kann direkt cloud-native starten.
+      Architektur-Arbeit heißt hier: die richtigen Optionen offenlegen,
+      ohne Cloud-Religion oder On-Prem-Reflex.
+  - q: "Wie sieht eine Migration ohne Big-Bang-Risiko aus?"
+    a: |
+      Iterativ, in nutzbaren Zwischenständen — der ältere Stand
+      bleibt produktiv, bis der neue produktiv ist. CMDB-getriebene
+      Inventur, Schicht-für-Schicht-Migration, gemessene Lastverläufe,
+      Rollback-Plan. Was nicht funktioniert: "wir migrieren alles am
+      Wochenende, Montag früh läuft's auf der neuen Plattform" — das
+      klappt nur in der Slidedeck-Realität.
+  - q: "Was bedeutet SAP-as-a-Service als Tiefen-Anker?"
+    a: |
+      Zwei Erfahrungsachsen: HACMP-getriebene SAP-Automatisierung in
+      heterogenen Unix-Landschaften (2007–2009) und Cloud-Native-
+      Anbindung einer bestehenden SAP-Landschaft via Tanzu Kubernetes
+      (2021). Beide Pole sitzen selten in einer Person — und genau
+      diese Spannweite trägt Entscheidungen zwischen "wir halten an
+      HACMP fest" und "wir gehen vollständig cloud-native".
+---
+
+Rechenzentrums- und Cluster-Architektur, Migration und Modernisierung
+großer Plattformen. Reichweite vom kleinen Self-hosted Cluster für
+verteilte Engineering-Teams bis zum Enterprise-Stack, von der
+heterogenen Unix-Landschaft mit HACMP und SAP bis zur cloud-nativen
+Container-Plattform auf Kubernetes. Erfahrung in heterogenen
+Unix-/Linux-Umgebungen seit 1993. Vereinzelte Mainframe-Berührung
+und ein breites Datenbank-Spektrum von Open-Source bis Enterprise.
+arc42 in RZ-Projekten seit 2021. SAP-as-a-Service als Tiefen-Anker —
+SAP-on-Linux-Transformation und DataCenter-Automatisierung im
+Chemie-Konzernumfeld 2007–2009, Tanzu-Kubernetes-Anbindung im
+öffentlichen Sektor 2021. Maintainer
+der cross-platform Monitoring-Bausteine libstatgrab und smart-snmpd,
+die in RZ-Monitoring-Stacks ihre Heimat haben.
+
+Verteilte Systeme sind keine Schönheits-Disziplin: Sie antworten auf
+Anforderungen, die ein einzelner Knoten nicht mehr trägt — Skalierung,
+Verfügbarkeit, Konsolidierung gewachsener Landschaften. Architektur
+in diesem Feld bedeutet, an den Brüchen zwischen Schichten lesbar zu
+bleiben: zwischen Storage und Compute, zwischen On-Prem und Cloud,
+zwischen Legacy und neuer Plattform. Meine Rolle: bestehende
+Architekturen verstehen, Migrationspfade vorzeichnen und so
+dokumentieren, dass Ihre Operations-Mannschaft die Plattform nach dem
+Projektende trägt.
+
+== In welchen Rollen ich hier unterstütze
+
+* link:/roles/architect/[Architekt] — Distributed-Systems-Architektur,
+  Migrationspfade, Cloud-/On-Prem-Entscheidungen,
+  Storage-/Netzwerk-Schnittstellen sichtbar machen
+* link:/roles/reviewer/[Reviewer] — bestehende RZ-Topologien,
+  Cloud-Migration-Konzepte und Operations-Prozesse prüfen
+* link:/roles/sparring-partner/[Sparringspartner] —
+  Cloud-vs-On-Prem-Entscheidungen und Konsolidierungs-Optionen
+  durchspielen, konstruktiv hinterfragen mit der methodischen
+  Werkzeugkiste, die zur Frage passt
+  (siehe link:/services/engineering-methodology/[Engineering-Methodik])
+* link:/roles/coach/[Coach] — Communities of Practice aufbauen,
+  Operations-Mannschaft für die neue Plattform befähigen,
+  Migration-Stewardship über mehrere Iterationen
+* link:/roles/lead-engineer/[Lead Engineer] — für definierte Teile
+  des Stacks: CI/CD-Pipeline-Code, Cluster-Komponenten,
+  Custom-Operators in Kubernetes; Hands-on dort, wo Architekturbild
+  und Code nahe beieinander liegen
+* link:/roles/technical-product-owner/[Technical Product Owner] —
+  req42, arc42 und Betriebs-Modellierung in einer Rolle, methodisch
+  unterlegt durch tpo42 und req4arc
+
+Welche Rolle gerade passt, ergibt sich aus der Situation.
+
+== Wann das passt
+
+// --- Cluster: Skalierung & Wachstum ---
+* Wenn Sie von einzelnen On-Premise-Servern auf eine
+  On-Premise-Service-Architektur wechseln wollen
+* Wenn eine Plattform skalieren soll, deren Engpässe weder gemessen
+  noch dokumentiert sind
+* Wenn die Hardware-Erneuerung ansteht und sich die Frage stellt:
+  gleicher Schnitt oder neuer?
+// --- Cluster: Modernisierung & heterogene Landschaft ---
+* Wenn mehrere Betriebssystem-Generationen, Datenbank-Welten oder
+  Virtualisierungs-Schichten gewachsen sind — und niemand mehr den
+  Überblick hat
+* Wenn ein SAP-/HACMP-Umfeld in eine cloud-native Architektur
+  überführt werden soll, ohne die Legacy-Schnittstellen zu brechen
+* Wenn manuelle Operations-Prozesse durch automatisierte (CMDB,
+  GitOps, Configuration Management) abgelöst werden sollen
+// --- Cluster: Capability & Brücken ---
+* Wenn der RZ-Bedarf planbar werden soll — Capability-Management
+  statt Bauchgefühl
+* Wenn die Brücke zwischen Entwicklungsteams und RZ-Betrieb fehlt
+  und Deployments deshalb hängen bleiben
+
+== Aus meiner Praxis
+
+Eine Auswahl anonymisierter Projekte (Details im
+link:/track-record/[Track Record]):
+
+* *Container-Plattform für SAP-Anbindung im öffentlichen Sektor*
+  (2021) — Proof of Concept für PaaS-Services auf Tanzu Kubernetes
+  in SELinux-gehärteter Umgebung. Brücke zwischen
+  Cloud-Native-Architektur und bestehender SAP-Landschaft,
+  Architekturentscheidungen nach arc42 dokumentiert.
+* *Standortübergreifende CI/CD-Plattform Energiewirtschaft*
+  (2024–2025) — Hardware-in-the-Loop-Testing über verteilte
+  Standorte. Vier Monate intensives RZ-Debugging, um Deployments von
+  GitHub/Azure-Runnern ins interne Netz zu ermöglichen — bei fehlender
+  Dokumentation über RZ-Topologie und Verantwortlichkeiten.
+* *CMDB-Plattform für Logistik-RZ* (2016–2018) — Plattform-Inventur
+  und Migration von manueller zu automatisierter Administration im
+  Rechenzentrum. RESTful APIs für Konfigurationsabfragen und
+  Change-Requests, Cloud-Infrastruktur mit Managed Infiniband und
+  Gigabit-Ethernet geplant.
+* *SAP-on-Linux-Transformation und DataCenter-Automatisierung im
+  Chemie-Konzernumfeld* (2007–2009) — HACMP- und SAP-Automatisierung
+  über mehrere Rechenzentrumsstandorte. Build-/Test-/Release-Management
+  nach ITIL, Konzepte für Team-Verstärkung, flexible und erweiterbare
+  Automatisierungsplattform (externe Referenz im CV).
+* *Räumlich verteilte Engineering-Plattform für Entwicklerteams*
+  (laufend) — Konzept und Proof of Concept: kleines Service-Cluster
+  im Kunden-On-Premise-Anteil, ergänzt um einzelne Knoten bei
+  Entwicklern, deren Yocto-Builds oder lokale LLM-Inferenz die
+  zentrale CI ohnehin sprengen würden. Im eigenen Aufbau aktuell
+  drei Knoten mit Lastprofilen (ceph-osd, scratch-nvme, llm-capable);
+  bei größeren Setups durchaus im zweistelligen Knotenbereich. Ziel:
+  hochlastige Workloads laufen dort, wo Latenz und Bandbreite passen —
+  ohne Hyperscaler-Bindung.
+* *Capability-Management in Enterprise-IT* (mehrjährig, periodisch) —
+  Aufbau eines Prozesses, der RZ-Bedarf planbar macht: Demand-Capture,
+  Forecasting, Kapazitäts-Allokation über mehrere Geschäftsfelder
+  hinweg. Weg vom Bauchgefühl-Einkauf hin zu nachvollziehbarer
+  Planung.
+* *RZ-Monitoring (Sensoring & Agenting)* (über mehrere Engagements) —
+  Schwerpunkt auf Sensoring und Agenting, weniger auf Event-Actions.
+  Eigene SNMPv3-Server-Entwicklung, plattformübergreifende
+  libstatgrab-basierte Monitore, Nagios-Pflege.
+
+== Häufige Fragen
+
+[qanda]
+Was unterscheidet dieses Angebot vom Plattform-Architektur-Angebot?::
+Verteilte Systeme & Plattformen ist der *Rechenzentrums-Fokus*
+innerhalb des breiteren Architektur-Spektrums: Konsolidierung,
+Migration, Cloud-Native, große Plattformen.
+link:/services/platform-architecture/[Plattform-Architektur] trägt
+zusätzlich die Strecke vom Eindraht-Bus über Edge bis ins
+Rechenzentrum mit Stakeholder-Brücke. Wer ein konkretes RZ-Vorhaben
+oder eine SAP-/Cloud-Migration hat, ist hier richtig. Wer eine
+durchgängige Architektur vom Sensor bis zum Backend braucht, eher
+beim Plattform-Architektur-Angebot.
+
+Gehört Disaster Recovery dazu?::
+Nein, *nicht* als Spezialgebiet. Hochverfügbarkeit (HACMP,
+Kubernetes-Cluster) und Backup-Strategien gehören zur Architektur,
+die ich verantworte — aber Disaster-Recovery-Spezialwissen
+(RPO/RTO-Auslegung, Standort-Failover-Drills, BCM-Zertifizierungen)
+fällt nicht in mein Repertoire. Wer einen DR-Spezialisten braucht,
+sollte einen suchen. Wer eine Architektur braucht, die DR überhaupt
+erst ermöglicht, ist hier richtig.
+
+Cloud, On-Prem oder Hybrid — was entscheidet?::
+Selten die Technologie, fast immer Governance, Datenflüsse und
+Operations-Kapazität. Eine SAP-Landschaft mit jahrzehntelang
+gewachsenen Schnittstellen wandert nicht im Big Bang in die Cloud —
+sie wandert in Schichten, oder gar nicht. Eine neue Anwendung ohne
+Legacy-Ballast kann direkt cloud-native starten. Architektur-Arbeit
+heißt hier: die richtigen Optionen offenlegen, ohne Cloud-Religion
+oder On-Prem-Reflex.
+
+Wie sieht eine Migration ohne Big-Bang-Risiko aus?::
+Iterativ, in nutzbaren Zwischenständen — der ältere Stand bleibt
+produktiv, bis der neue produktiv ist. CMDB-getriebene Inventur,
+Schicht-für-Schicht-Migration, gemessene Lastverläufe, Rollback-Plan.
+Was *nicht* funktioniert: "wir migrieren alles am Wochenende, Montag
+früh läuft's auf der neuen Plattform" — das klappt nur in der
+Slidedeck-Realität.
+
+Was bedeutet SAP-as-a-Service als Tiefen-Anker?::
+Zwei Erfahrungsachsen: HACMP-getriebene SAP-Automatisierung in
+heterogenen Unix-Landschaften (2007–2009) und Cloud-Native-Anbindung
+einer bestehenden SAP-Landschaft via Tanzu Kubernetes (2021). Beide
+Pole sitzen selten in einer Person — und genau diese Spannweite
+trägt Entscheidungen zwischen "wir halten an HACMP fest" und "wir
+gehen vollständig cloud-native".
+
+== Reden wir!
+
+Erstgespräch, Architektur-Sparring oder einfach kennenlernen —
+link:/kontakt/[Termin vereinbaren] oder
++++<span class="email-protect" data-user="rehsack+de" data-domain="gmail.com" data-subject="Anfrage zu Verteilten Systemen und Plattformen über rehsack.de" data-body="Hallo Jens Rehsack,&#10;&#10;ich würde Sie gern zu einem Gespräch über mein Plattform-Vorhaben kennenlernen.&#10;&#10;(Kurze Beschreibung)&#10;&#10;Viele Grüße" data-text="per e-Mail">[JavaScript erforderlich]</span>+++.

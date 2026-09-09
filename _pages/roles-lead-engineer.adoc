@@ -1,0 +1,52 @@
+---
+title: "Lead Engineer"
+permalink: /roles/lead-engineer/
+---
+
+Senior-Engineering-Verantwortung mit Hands-on Code — Feature-
+Implementation, Refactoring, Code-Review und Vorbild-Wirkung im
+Team. Anders als ein link:/roles/architect/[Architekt]: weniger
+Diagramm-Disziplin, mehr produktive Code-Verantwortung. Anders als
+reine Entwicklungskapazität: ein Lead Engineer trägt die
+Engineering-Praxis im Subsystem mit, definiert Qualitätsstandards
+und mentort. Wo eine Plattform jemanden braucht, der das System
+tatsächlich baut — und das Team gleichzeitig durch Vorbild und
+konkrete Begleitung weiterbringt.
+
+== Wann diese Rolle passt
+
+* Wenn ein Feature mehr ist als ein Sprint und Tiefe braucht — und im
+  Team niemand die Erfahrung hat, es ohne Lehrgeld zu bauen
+* Wenn ein Subsystem refaktoriert werden soll und der Refactoring-Pfad
+  erst entstehen muss, während gebaut wird
+* Wenn ein Senior fehlt, der mit Code argumentiert statt mit
+  Folienpräsentationen
+* Wenn ein externer Spike die Erkenntnis liefert, die internes
+  Mentoring dann im Team verbreitet
+* Bei systemnahen Technologien (Bare-Metal, s6-rc, STM32, ADµCM360)
+  oft in Personalunion mit link:/roles/architect/[Architekt] — die
+  Trennung der beiden Rollen funktioniert dort nicht, weil die
+  Erkenntnis im Code liegt
+* In Open-Source-Auftragsentwicklung: Erweiterung etablierter
+  Bausteine (List::MoreUtils, libstatgrab, eigene Yocto-Layer) um
+  fehlende Features; Pflege interner Lösungen, die auf OSS aufsetzen
+
+== Verwandte Rollen
+
+link:/roles/architect/[Architekt] (oft Personalunion bei systemnaher
+Tiefe), link:/roles/coach/[Coach] (Vorbild-Wirkung verstärkt durch
+explizites Coaching), link:/roles/interim-maintainer/[Interim-
+Maintainer] (Übergangs- vs. dauerhafte Engineering-Verantwortung)
+
+== Relevante Themen
+
+link:/services/embedded-yocto/[Embedded & Yocto],
+link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller],
+link:/services/distributed-systems/[Verteilte Systeme & Plattformen],
+link:/services/open-source-engagement/[Open Source Engagement]
+
+[NOTE]
+====
+Diese Seite ist als Skelett angelegt und wird vor Live-Gang vertieft.
+Für ein Erstgespräch: link:/kontakt/[Termin vereinbaren].
+====

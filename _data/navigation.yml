@@ -1,7 +1,15 @@
 main:
-  - title: "Blog"
+  - title: "Home"
     url: /
+  - title: "Services"
+    url: /services/
   - title: "Über mich"
     url: /about/
+  - title: "Track Record"
+    url: /track-record/
+  - title: "Blog"
+    url: /blog/
+  - title: "Kontakt"
+    url: /kontakt/
   - title: "Impressum"
     url: /imprint/

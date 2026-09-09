@@ -1,0 +1,21 @@
+{% if page.service_name %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ page.service_name | jsonify }},
+  "description": {{ page.service_description | default: page.title | jsonify }},
+  "provider": {
+    "@type": "Person",
+    "name": "Jens Rehsack",
+    "url": "{{ site.url }}"
+  },
+  "serviceType": {{ page.service_type | default: page.service_name | jsonify }},
+  "areaServed": {
+    "@type": "Country",
+    "name": "Germany"
+  },
+  "url": "{{ site.url }}{{ page.url }}"
+}
+</script>
+{% endif %}

@@ -1,0 +1,279 @@
+---
+title: "Open Source Engagement"
+permalink: /services/open-source-engagement/
+service_name: "Open Source Engagement"
+service_description: "Langlebige Pflege von Open-Source-Bausteinen, die kommerzielle Stacks tragen — CPAN-Module, NetBSD-pkgsrc, Yocto-Layer, libstatgrab, smart-snmpd. Plus Auftrags-Entwicklung an OSS in zwei Modi: Upstream-Features für etablierte Module und interne OSS-Forks unter gleicher Engineering-Disziplin. CPAN-Author seit 2007 (~56 Releases als REHSACK), NetBSD-Committer seit 2008, Yocto/OE-Contributor seit 2015."
+service_type: "Open Source Maintenance & Stewardship"
+faqs:
+  - q: "Was bedeutet langlebige Pflege konkret?"
+    a: |
+      18 Jahre CPAN, 17 Jahre NetBSD, 10 Jahre Yocto — das ist die
+      Zeitskala, in der ein Open-Source-Maintainer das Vertrauen
+      aufbaut, das kommerzielle Stacks brauchen, um auf einen Baustein
+      zu setzen. Konkret heißt das: Patches reviewen, CI-Pipelines
+      grün halten, Releases schneiden, plattformübergreifende
+      Build-Probleme lösen, Sicherheits-Updates zeitnah ausspielen, mit
+      Co-Maintainern abstimmen und gelegentlich einen Talk auf einer
+      Konferenz halten, der jüngere Mitwirkende einsammelt.
+  - q: "Welche Module, Pakete und Layer pflegen Sie aktiv?"
+    a: |
+      Aus dem Perl-Umfeld: SQL::Statement, DBD::File, DBD::DBM,
+      List::MoreUtils, Hash::MoreUtils, Unix::Statgrab, MooX::Options,
+      File::ShareDir, DBI::Test, Template::DBI — insgesamt rund 56
+      Releases unter dem CPAN-Author-Handle REHSACK. Aus dem
+      Embedded-Umfeld: die eigenen Yocto-Layer
+      link:/projects/meta-prd-flash/[meta-prd-flash] (Provisioning und
+      Field-Update), link:/projects/meta-sysinit/[meta-sysinit] (s6,
+      daemontools, runit), meta-pi-hole (Pi-hole 6.x vollständig
+      paketiert) und meta-cpan (Perl-Module für Yocto). Aus dem
+      NetBSD-Umfeld: pkgsrc-Pflege für Perl-Module und Drittanbieter-
+      Applikationen über AIX, Solaris, HP-UX, Linux, *BSD, macOS und
+      Windows. Plus libstatgrab (cross-platform Statistik-Sammler) und
+      smart-snmpd (Multi-threaded SNMPv3-Server in C++).
+  - q: "Können Sie ein abgehängtes OSS-Projekt übernehmen?"
+    a: |
+      Im Prinzip ja — die Frage ist immer, ob das Projekt selbst
+      tragfähig ist und ob die ursprünglichen Maintainer eine saubere
+      Übergabe möglich machen. Ein Projekt ohne Tests, ohne CI, ohne
+      Dokumentation und ohne Co-Maintainer zu übernehmen ist eine
+      Entscheidung, die ich nicht leichtfertig treffe. Wenn die Basis
+      stimmt — und sei es nur, dass die Community mitzieht — ist eine
+      Übernahme als Übergangs-Stewardship oder dauerhafte
+      Wartung möglich.
+  - q: "Was kostet Open-Source-Maintenance?"
+    a: |
+      Das hängt vom Umfang ab: ein einzelnes Modul mit einem Release
+      pro Quartal kostet wenige Stunden im Monat, ein Yocto-Layer für
+      einen kommerziellen Stack mit eigenen Build-Pipelines deutlich
+      mehr. Was sich anbietet: ein jährliches Retainer-Modell für
+      Sicherheits-Releases und Build-Stabilität, ergänzt durch
+      einzelne Aufträge für größere Feature- oder
+      Modernisierungs-Arbeiten. Konkrete Zahlen entstehen im
+      Erstgespräch.
+  - q: "Wie funktioniert die Cross-Platform-Portierung?"
+    a: |
+      Cross-Platform-Portierung ist die Disziplin, an den Brüchen
+      zwischen Toolchain-Welten lesbar zu bleiben — IBM XL C/C++ vs.
+      GCC vs. Clang, AIX-Linker vs. GNU-Linker, autotools vs. CMake
+      vs. plain Make. Über die Jahre habe ich Perl-Module und
+      C/C++-Pakete über AIX, Solaris, HP-UX, Linux, *BSD, macOS und
+      Windows portiert — das Muster ist meistens dasselbe: explizit
+      machen, was an einer Plattform vorausgesetzt wird, und diese
+      Voraussetzungen testbar in die Build-Konfiguration heben.
+  - q: "Wann macht ein Upstream-Beitrag mehr Sinn als ein interner Fork?"
+    a: |
+      Die Entscheidung dreht sich selten um Geld, fast immer um die
+      langfristige Wartungsbilanz. Ein Upstream-Beitrag heißt: einmal
+      sauber entwickeln, einen Review-Prozess der Community durchlaufen,
+      danach trägt die Community die Wartung des Features mit. Ein
+      interner Fork heißt: schneller starten, weniger Abstimmung,
+      aber jeder neue Upstream-Release wird zur Merge-Übung, und das
+      Custom-Feature trägt der Kunde allein. Faustregel: Wenn das
+      Feature allgemein nützlich ist, lohnt der Upstream-Weg meist
+      über die Projektlaufzeit hinaus — ein Custom-Modul mit
+      Geschäftslogik gehört in den internen Fork. Was beide
+      Engagement-Modelle teilen: dieselbe Engineering-Disziplin
+      (Tests, CI, Dokumentation, Conventional Commits) — denn ein
+      Fork ohne Disziplin zerfällt schneller als ein vergessener
+      Upstream-Patch. In beiden Modellen ist die Rolle Lead Engineer
+      (siehe link:/roles/lead-engineer/[Lead Engineer]).
+---
+
+Langlebige Pflege von Open-Source-Bausteinen, die kommerzielle Stacks
+tragen — CPAN-Module, NetBSD-pkgsrc, Yocto-Layer, libstatgrab,
+smart-snmpd. CPAN-Author seit 2007 (~56 Releases als
+https://metacpan.org/author/REHSACK[REHSACK]), NetBSD-Committer seit
+2008 (Handle https://www.netbsd.org/people/groups/[sno]), Yocto/OE-
+Contributor seit 2015. Wo eine Firma einen seriösen Maintainer für
+einen kritischen Open-Source-Baustein braucht — sei es ein
+CPAN-Modul, ein NetBSD-Package oder ein eigener Yocto-Layer — ist
+dieses Angebot die Heimat.
+
+Open Source ist kein Marketing-Anstrich, sondern eine Lebensaufgabe
+der wenigen, die langfristig dabei bleiben. 18 Jahre CPAN, 17 Jahre
+NetBSD, 10 Jahre Yocto: das ist die Zeit, in der ein Maintainer das
+Vertrauen aufbaut, das kommerzielle Stacks brauchen, um auf seine
+Module zu setzen. Meine Rolle: diese Pflege weiterführen, neue
+Bausteine schaffen, wo die Lücke schmerzt, und Wissen weitergeben,
+damit der nächste Maintainer nicht beim Nullpunkt anfängt.
+
+== In welchen Rollen ich hier unterstütze
+
+Open-Source-Engagement teilt sich in zwei Modi auf, die
+unterschiedliche Rollen verlangen — laufende Maintainer-Tätigkeit
+und beauftragte Engineering-Arbeit an OSS-Bausteinen:
+
+* link:/roles/lead-engineer/[Lead Engineer] — bei Auftrags-Entwicklung
+  zentral: Features in etablierten OSS-Modulen umsetzen oder einen
+  internen Fork mit Engineering-Disziplin pflegen
+* link:/roles/interim-maintainer/[Interim-Maintainer] —
+  Übergangs-Stewardship für ein Open-Source-Projekt, dessen
+  ursprünglicher Maintainer das Feld verlässt; saubere Übergabe an
+  einen Nachfolger ermöglichen
+* link:/roles/reviewer/[Reviewer] — Pull-Request-Reviews,
+  Patch-Bewertung, Cross-Platform-Test-Coverage prüfen
+* link:/roles/coach/[Coach] — Onboarding neuer Mitwirkender,
+  Mentoring jüngerer Maintainer, Konferenz-Talks zur
+  Werkzeug-Weitergabe
+
+== Wann das passt
+
+// --- Cluster: CPAN-Maintenance ---
+* Wenn Ihre Firma auf ein CPAN-Modul angewiesen ist, dessen Maintainer
+  inaktiv geworden ist — und Sie brauchen jemanden, der das Modul am
+  Leben hält
+* Wenn ein Perl-Stack modernisiert werden soll (Perl 5.10 → 5.40,
+  Distroless-Container, Cross-Compile-Builds für Embedded)
+* Wenn ein eigenes internes Perl-Modul auf CPAN gehoben werden soll —
+  mit Tests, CI und Dokumentation auf Industrie-Niveau
+// --- Cluster: NetBSD- & Cross-Platform-Portierung ---
+* Wenn ein Open-Source-Paket über AIX, Solaris, HP-UX, Linux, *BSD,
+  macOS und Windows getragen werden muss — und die Toolchain-Brüche
+  reale Build-Probleme erzeugen
+* Wenn Sicherheits-Patches in einer pkgsrc-Pflegestelle zeitnah
+  eingespielt werden sollen
+// --- Cluster: Yocto-Layer-Stewardship ---
+* Wenn Sie einen eigenen Yocto-Layer pflegen, der eine kritische
+  Funktion in Ihrem Stack trägt — Provisioning, OTA-Update, eigene
+  Pakete — und der Wartungsaufwand interne Kapazität übersteigt
+* Wenn ein Open-Source-Layer (meta-prd-flash, meta-sysinit,
+  meta-pi-hole) als Baustein in Ihren Stack integriert werden soll
+// --- Cluster: Übergabe an seriösen Maintainer ---
+* Wenn ein Open-Source-Projekt ohne klare Maintainer-Nachfolge
+  dasteht und die Community einen seriösen Übergangs-Stewardship
+  braucht
+* Wenn ein Konferenz-Talk oder Tutorial zur Werkzeug-Weitergabe
+  helfen würde, jüngere Mitwirkende einzusammeln
+// --- Cluster: Auftrags-Entwicklung ---
+* Wenn Sie auf ein etabliertes OSS-Modul angewiesen sind, dem ein
+  Feature fehlt, das Sie selbst nicht beisteuern können oder wollen —
+  und der Upstream-Weg trotzdem strategisch klüger ist als ein interner
+  Fork
+* Wenn ein interner Fork eines OSS-Bausteins mit gleicher
+  Engineering-Disziplin gepflegt werden soll wie ein öffentliches
+  Projekt — Tests, CI, Dokumentation, sauberer Diff zum Upstream
+* Wenn Geschäftslogik auf einer OSS-Basis aufsetzt und das interne
+  Custom-Modul über die Jahre langlebig wartbar bleiben muss, ohne
+  dass dem Team jede Upstream-Aktualisierung schmerzt
+
+== Aus meiner Praxis
+
+Aktiv gepflegt unter dem CPAN-Author-Handle
+https://metacpan.org/author/REHSACK[REHSACK]:
+
+* *SQL::Statement* — SQL-Parser/Engine für DBD::File, DBD::DBM und
+  andere DBI-Treiber
+* *DBD::File, DBD::DBM, DBD::CSV* — DBI-Treiber für Datei-basierte
+  Datenquellen
+* *List::MoreUtils, Hash::MoreUtils* — funktionale Utilities, in der
+  Perl-Community weit verbreitet
+* *Unix::Statgrab* — Perl-Binding für die plattformübergreifende
+  libstatgrab-Bibliothek
+* *MooX::Options* — Kommandozeilen-Options-Framework auf Basis von Moo
+* *File::ShareDir, DBI::Test, Template::DBI* — weitere Werkzeuge im
+  Perl-Ökosystem
+
+Eigene Yocto-Layer auf GitLab:
+
+* link:/projects/meta-prd-flash/[meta-prd-flash] — Provisioning- und
+  Field-Update-Layer mit deklarativem Deployment
+* link:/projects/meta-sysinit/[meta-sysinit] — Init- und
+  Service-Supervision-Layer (s6, daemontools, runit) jenseits des
+  systemd-Standards
+* *meta-pi-hole* — Pi-hole 6.x vollständig für Yocto paketiert
+  (FTL-DNS, Web-UI, CLI)
+* *meta-cpan* — Perl-Module für Yocto/OE-Embedded-Plattformen
+
+Cross-Platform C/C++-Projekte:
+
+* *libstatgrab* — plattformübergreifende Statistik-Sammler-Bibliothek
+  (Linux, *BSD, Solaris, AIX, HP-UX, macOS)
+* *smart-snmpd* — Multi-threaded SNMPv3-Server in C++, eigene MIB,
+  konzipiert und entwickelt für Unix-/Linux-RZ-Monitoring
+
+NetBSD pkgsrc seit 2008 — Pflege von Perl-Modulen und
+Drittanbieter-Applikationen über mehrere Plattformen hinweg.
+Sichtbar auf https://www.netbsd.org/people/groups/[netbsd.org/people]
+(Mitgliedschaft Packages-Gruppe, Handle sno).
+
+Konferenz-Beiträge: YAPC::Europe 2013 Kiev (Unix::Statgrab), The
+Perl Conference 2017 Amsterdam (CMDB Driven by Perl + Cross
+Compiling for Perl Hackers), PerlCon 2019 Riga (Perl 6 for beginners
+plus Embedded-Tutorial), Niederrhein.pm 2016 (Cross Compiling).
+
+== Häufige Fragen
+
+[qanda]
+Was bedeutet langlebige Pflege konkret?::
+18 Jahre CPAN, 17 Jahre NetBSD, 10 Jahre Yocto — das ist die
+Zeitskala, in der ein Open-Source-Maintainer das Vertrauen aufbaut,
+das kommerzielle Stacks brauchen, um auf einen Baustein zu setzen.
+Konkret heißt das: Patches reviewen, CI-Pipelines grün halten,
+Releases schneiden, plattformübergreifende Build-Probleme lösen,
+Sicherheits-Updates zeitnah ausspielen, mit Co-Maintainern abstimmen
+und gelegentlich einen Talk auf einer Konferenz halten, der jüngere
+Mitwirkende einsammelt.
+
+Welche Module, Pakete und Layer pflegen Sie aktiv?::
+Aus dem Perl-Umfeld: SQL::Statement, DBD::File, DBD::DBM,
+List::MoreUtils, Hash::MoreUtils, Unix::Statgrab, MooX::Options,
+File::ShareDir, DBI::Test, Template::DBI — insgesamt rund 56 Releases
+unter dem CPAN-Author-Handle
+https://metacpan.org/author/REHSACK[REHSACK]. Aus dem
+Embedded-Umfeld: die eigenen Yocto-Layer
+link:/projects/meta-prd-flash/[meta-prd-flash],
+link:/projects/meta-sysinit/[meta-sysinit], meta-pi-hole (Pi-hole 6.x
+vollständig paketiert) und meta-cpan. Aus dem NetBSD-Umfeld:
+pkgsrc-Pflege für Perl-Module und Drittanbieter-Applikationen über
+AIX, Solaris, HP-UX, Linux, *BSD, macOS und Windows. Plus
+libstatgrab und smart-snmpd (SNMPv3-Server in C++).
+
+Können Sie ein abgehängtes OSS-Projekt übernehmen?::
+Im Prinzip ja — die Frage ist immer, ob das Projekt selbst tragfähig
+ist und ob die ursprünglichen Maintainer eine saubere Übergabe
+möglich machen. Ein Projekt ohne Tests, ohne CI, ohne Dokumentation
+und ohne Co-Maintainer zu übernehmen ist eine Entscheidung, die ich
+nicht leichtfertig treffe. Wenn die Basis stimmt — und sei es nur,
+dass die Community mitzieht — ist eine Übernahme als
+Übergangs-Stewardship oder dauerhafte Wartung möglich.
+
+Was kostet Open-Source-Maintenance?::
+Das hängt vom Umfang ab: ein einzelnes Modul mit einem Release pro
+Quartal kostet wenige Stunden im Monat, ein Yocto-Layer für einen
+kommerziellen Stack mit eigenen Build-Pipelines deutlich mehr. Was
+sich anbietet: ein jährliches Retainer-Modell für Sicherheits-Releases
+und Build-Stabilität, ergänzt durch einzelne Aufträge für größere
+Feature- oder Modernisierungs-Arbeiten. Konkrete Zahlen entstehen im
+Erstgespräch.
+
+Wie funktioniert die Cross-Platform-Portierung?::
+Cross-Platform-Portierung ist die Disziplin, an den Brüchen zwischen
+Toolchain-Welten lesbar zu bleiben — IBM XL C/{cpp} vs. GCC vs. Clang,
+AIX-Linker vs. GNU-Linker, autotools vs. CMake vs. plain Make. Über
+die Jahre habe ich Perl-Module und C/{cpp}-Pakete über AIX, Solaris,
+HP-UX, Linux, *BSD, macOS und Windows portiert — das Muster ist
+meistens dasselbe: explizit machen, was an einer Plattform
+vorausgesetzt wird, und diese Voraussetzungen testbar in die
+Build-Konfiguration heben.
+
+Wann macht ein Upstream-Beitrag mehr Sinn als ein interner Fork?::
+Die Entscheidung dreht sich selten um Geld, fast immer um die
+langfristige Wartungsbilanz. Ein *Upstream-Beitrag* heißt: einmal
+sauber entwickeln, einen Review-Prozess der Community durchlaufen,
+danach trägt die Community die Wartung des Features mit. Ein
+*interner Fork* heißt: schneller starten, weniger Abstimmung, aber
+jeder neue Upstream-Release wird zur Merge-Übung, und das
+Custom-Feature trägt der Kunde allein. Faustregel: Wenn das Feature
+allgemein nützlich ist, lohnt der Upstream-Weg meist über die
+Projektlaufzeit hinaus — ein Custom-Modul mit Geschäftslogik gehört
+in den internen Fork. Was beide Engagement-Modelle teilen: dieselbe
+Engineering-Disziplin (Tests, CI, Dokumentation, Conventional
+Commits) — denn ein Fork ohne Disziplin zerfällt schneller als ein
+vergessener Upstream-Patch. In beiden Modellen ist die Rolle
+link:/roles/lead-engineer/[Lead Engineer].
+
+== Reden wir!
+
+Erstgespräch, Maintenance-Sparring oder einfach kennenlernen —
+link:/kontakt/[Termin vereinbaren] oder
++++<span class="email-protect" data-user="rehsack+de" data-domain="gmail.com" data-subject="Anfrage zu Open Source Engagement über rehsack.de" data-body="Hallo Jens Rehsack,&#10;&#10;ich würde Sie gern zu einem Gespräch über mein Open-Source-Vorhaben kennenlernen.&#10;&#10;(Kurze Beschreibung)&#10;&#10;Viele Grüße" data-text="per e-Mail">[JavaScript erforderlich]</span>+++.

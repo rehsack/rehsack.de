@@ -4,7 +4,8 @@
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "postCreateCommand": "bundle config set --local path vendor/bundle && bundle install",
-  "appPort": [4000, 35729],
+  "runArgs": ["--dns=1.1.1.1", "--dns=8.8.8.8"],
+  "appPort": ["0.0.0.0:4000:4000", "0.0.0.0:35729:35729"],
   "forwardPorts": [4000, 35729],
   "portsAttributes": {
     "4000": { "label": "Jekyll", "onAutoForward": "notify" },

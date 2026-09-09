@@ -1,0 +1,40 @@
+---
+title: "Sparringspartner"
+permalink: /roles/sparring-partner/
+---
+
+Zweite Meinung auf Augenhöhe — knifflige Fragen sortieren, Optionen
+durchspielen, mitdenken statt entscheiden. Ich übernehme nicht Ihre
+Verantwortung; ich helfe Ihnen, sie informierter zu tragen.
+
+== Wann diese Rolle passt
+
+// TODO ausarbeiten — Stichworte:
+// - Architektur-Crossroads: zwei plausible Wege, welcher trägt
+//   langfristig?
+// - Compliance-/CRA-Fragen, an denen sich Engineering die Zähne
+//   ausbeißt
+// - Nach einem Reviewer-Bericht: Welche Empfehlung adressiert welches
+//   Risiko, in welcher Reihenfolge?
+// - Wenn Sie eine Entscheidung gegen eine vorherrschende Meinung im
+//   Team verteidigen müssen und sicher sein wollen, dass die Begründung
+//   trägt
+
+== Verwandte Rollen
+
+link:/roles/architect/[Architekt], link:/roles/reviewer/[Reviewer],
+link:/roles/coach/[Coach]
+
+== Relevante Themen
+
+link:/services/platform-architecture/[Plattform- & Systemarchitektur],
+link:/services/embedded-yocto/[Embedded & Yocto],
+link:/services/distributed-systems/[Verteilte Systeme & Plattformen],
+link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller],
+link:/services/engineering-methodology/[Engineering-Methodik]
+
+[NOTE]
+====
+Diese Seite ist als Skelett angelegt und wird vor Live-Gang vertieft.
+Für ein Erstgespräch: link:/kontakt/[Termin vereinbaren].
+====

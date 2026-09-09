@@ -28,6 +28,20 @@ After changing `.devcontainer/devcontainer.json`, remove the old container befor
 docker rm -f <container-id>
 ```
 
+## Port assignment across sister sites
+
+All four sister-site devcontainers can run concurrently because each
+binds unique host ports:
+
+| Site             | Jekyll | LiveReload |
+|------------------|-------:|-----------:|
+| rehsack.de       |   4000 |      35729 |
+| rehsack.dev      |   4001 |      35730 |
+| rehsack.eu       |   4002 |      35731 |
+| hirschbeutel.de  |   4003 |      35732 |
+
+rehsack.de keeps the defaults (canonical DE site); the others count up.
+
 ## Build & Deploy
 
 GitHub Actions (`.github/workflows/publish.yml`) builds and deploys to GitHub Pages on push to main. CI (`.github/workflows/ci.yml`) runs on branches and PRs, validating that expected pages exist, excluded files don't leak, theme toggle works, and navigation targets resolve.
@@ -69,7 +83,7 @@ Posts without `translation_url` render normally without any flag.
 - **Theme**: Minimal Mistakes via `jekyll-remote-theme` (no local theme files)
 - **Dark mode**: `_includes/head/custom.html` sets `data-theme` before first paint (prevents flash), `assets/js/theme-toggle.js` provides the toggle button, `_sass/_custom-overrides.scss` contains all dark-mode styles
 - **Email obfuscation**: `assets/js/email-protect.js` assembles mailto links at runtime from `data-user`/`data-domain` attributes — bots see only placeholder text
-- **Navigation**: `_data/navigation.yml` — Blog, Über mich, Impressum
+- **Navigation**: `_data/navigation.yml` — Home, Services, Über mich, Track Record, Blog, Kontakt, Impressum
 - **Footer credit**: `_data/ui-text.yml` overrides `powered_by` to include Claude; the theme appends "Jekyll & Minimal Mistakes" automatically
 - **Plugins**: jekyll-remote-theme, jekyll-asciidoc, jekyll-sitemap, jekyll-feed, jekyll-include-cache
 - **AsciiDoc config**: source-highlighter set to rouge in `_config.yml` under `asciidoc.attributes`

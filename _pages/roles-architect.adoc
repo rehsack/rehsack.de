@@ -1,0 +1,46 @@
+---
+title: "Architekt"
+permalink: /roles/architect/
+---
+
+Plattform- und Systemarchitektur entwerfen — BSP-Strategie, Layer-Schnitt,
+ADRs, Entscheidungspfade. Übersetzung zwischen Engineering und
+Compliance/Vertrieb gehört nach Gernot Starke (Effektive
+Software-Architekturen) zum Kern der Rolle und ist in dieser Arbeit
+eingeschlossen. Hands-On, nicht Elfenbeinturm — Architektur-Arbeit
+heißt auch, an konkreten Stellen selbst zuzupacken, wenn es die
+Erkenntnis im Team beschleunigt; nicht aber, sich vom Mandat
+"Architekt" zum Mandat "Hands-on-Engineer" verschieben zu lassen.
+
+== Wann diese Rolle passt
+
+// TODO ausarbeiten — Stichworte:
+// - Neu-Entwurf einer Plattform, bevor das erste Recipe geschrieben wird
+// - Vor dem Wechsel auf eine neue Hardware-Generation
+// - Wenn Stakeholder (Engineering, Compliance, Vertrieb) aneinander
+//   vorbei reden und jemand braucht, der Übersetzung *und* technische
+//   Tiefe mitbringt
+// - Wenn ADRs fehlen und keiner mehr begründen kann, warum ein
+//   bestehender Layer-Schnitt so ist wie er ist
+
+== Verwandte Rollen
+
+link:/roles/reviewer/[Reviewer], link:/roles/sparring-partner/[Sparringspartner],
+link:/roles/coach/[Coach], link:/roles/interim-maintainer/[Interim-Maintainer],
+link:/roles/lead-engineer/[Lead Engineer] (oft Personalunion bei systemnahen Technologien),
+link:/roles/mediator/[Vermittler] (Vermittlung ist nach Starke Teil der
+Architekten-Rolle, bei breiter Stakeholder-Landschaft als eigene Rolle ausgewiesen)
+
+== Relevante Themen
+
+link:/services/platform-architecture/[Plattform- & Systemarchitektur],
+link:/services/embedded-yocto/[Embedded & Yocto],
+link:/services/distributed-systems/[Verteilte Systeme & Plattformen],
+link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller],
+link:/services/engineering-methodology/[Engineering-Methodik]
+
+[NOTE]
+====
+Diese Seite ist als Skelett angelegt und wird vor Live-Gang vertieft.
+Für ein Erstgespräch: link:/kontakt/[Termin vereinbaren].
+====

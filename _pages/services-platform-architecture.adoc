@@ -1,0 +1,262 @@
+---
+title: "Plattform- & Systemarchitektur"
+permalink: /services/platform-architecture/
+service_name: "Plattform- und Systemarchitektur"
+service_description: "Durchgängige Architektur für heterogene Systeme — vom Edge-Gateway im Bus oder in der Straßenbahn bis zur Container-Plattform im Rechenzentrum. Mit arc42 für Architektur-Dokumentation, req42 für agile Anforderungs- und Produkt-Strukturierung sowie ADRs für tragende Entscheidungen unterstütze ich Teams dabei, Architektur nachvollziehbar zu gestalten und im Betrieb weiterzuführen. Software-Entwicklung seit 1991; an der Schnittstelle Geschäftsziel ↔ Technik seit 2007 (SAP-on-Linux-Transformation und DataCenter-Automatisierung im Chemie-Konzernumfeld). Initiator des Open-Source-Frameworks tpo42, das req42 und arc42 für Technical Product Owner als integriertes Werkzeug verbindet — entstanden aus dem Wunsch, beide Frameworks zu nutzen und dabei Single-Point-of-Truth zu wahren."
+service_type: "Platform & System Architecture Consulting"
+faqs:
+  - q: "Was unterscheidet dieses Angebot vom Engineering-Methodik-Angebot?"
+    a: |
+      Hier wende ich Methode an, dort vermittle ich sie. Konkret:
+      In diesem Angebot arbeite ich am echten System —
+      req42-Anforderungen, arc42-Bausteine, ADRs zu konkreten
+      Entscheidungen, Schnittstellen zwischen Edge, Backend und
+      Rechenzentrum. Im Engineering-Methodik-Angebot befähige ich
+      Teams: Coaching, Schulung, Practice Review. Beides verschränkt
+      sich in der Praxis oft — ein Architektur-Review liefert eine
+      Doku, ein Methodik-Coaching liefert ein Team, das selber
+      dokumentiert.
+  - q: "Wer pflegt die Architekturdokumentation nach Projektabschluss?"
+    a: |
+      Das ist die Frage, an der die meisten Architektur-Bemühungen
+      stillschweigend zerfallen. Mein Standard-Vorgehen verschiebt das
+      Pflege-Risiko nach vorn: Documentation as Code lebt im Code-Repo
+      des Teams, nicht in einem Confluence-Ordner ohne Eigentümer. ADRs
+      entstehen bei der Entscheidung, nicht im Nachhinein. Wo es
+      organisatorisch passt, baue ich Communities of Practice und ein
+      Architektur-Manifest auf — so trägt das Team die Pflege gemeinsam
+      statt einzelner Schultern. Übergangsweise begleite ich in geringer
+      Auslastung weiter, wenn Sie das wollen.
+  - q: "Sind Eindraht-Bus und Software-Defined Network nicht völlig verschiedene Welten?"
+    a: |
+      Technisch ja, architektonisch nicht. Schauen Sie auf
+      Software-Defined Networks: VLAN-Tagging im Yocto-Entwicklernetz
+      isoliert jedes Board, Linux-Namespaces in der Gebäudeautomation
+      segmentieren die Inter-Liegenschafts-Kommunikation, eine
+      CNI-Implementierung in der Container-Plattform trennt Tenants.
+      Drei verschiedene Welten — eine Abstraktion. Wer
+      Schnittstellenformat, Authentisierung, Update-Modell oder
+      Telemetrie-Pfad an einer Stelle nicht sauber entscheidet, zahlt
+      an der nächsten. Die Eindraht-Bus-bis-Plattform-Spannweite ist
+      keine Marketing-Phrase: Ein Architekt mit Reichweite kommt
+      günstiger als drei Spezialisten, die sich nur an ihren
+      Schnittstellen treffen.
+  - q: "Schreiben Sie auch Code, oder nur Architekturdokumente?"
+    a: |
+      Ja, ständig — Everything-as-Code: Doku, Diagramme, Infrastruktur
+      und Quality-Gates entstehen als Code. Daneben Hands-on am
+      Produktcode, wenn der Beleg in Code kürzer ausfällt als drei
+      Workshops. Bei systemnahen Technologien ist Architekt +
+      Lead-Developer in einer Person die natürliche Konfiguration —
+      Schwerpunkt des Angebots Bare-Metal & Multi-Controller; und in
+      knapp besetzten Teams sind mehrere Rollen pro Person ohnehin die
+      Regel, Communities of Practice fördern genau das. Was ich
+      vermeide: die kalte Verschiebung im Projektverlauf, wenn das
+      Mandat nicht mitwandert.
+  - q: "Wie lange dauert ein Architektur-Review typischerweise?"
+    a: |
+      Ein Architektur-Review extrahiert kein tradiertes Wissen aus
+      Köpfen — das wäre Architektur-Arbeit. Ein Review prüft die
+      vorhandene Dokumentation: Wo sind Lücken? Wo bauen
+      Schlussfolgerungen auf impliziten statt expliziten Annahmen
+      auf? Wo stehen Entscheidungen ohne Begründung im Raum?
+      Erfahrungsgemäß ein bis zwei Wochen. Länger wird es bei sehr
+      dichten Dokumentationen mit viel vorausgesetztem Domänenwissen,
+      bei sehr umfangreichen Dokumentationen oder bei der ungünstigen
+      Kombination aus beidem. Eine begleitende Architektur-Arbeit über
+      Wochen oder Monate ist der häufigere Fall — das Review ist dann
+      ein Zwischenstand, nicht der Endpunkt. Wenn Sie vorab nicht
+      festlegen können, was das Review beantworten soll, hilft ein
+      Vorgespräch mehr als ein Angebot.
+---
+
+Durchgängige Architektur für heterogene Systeme — vom Edge-Gateway im
+Bus oder in der Straßenbahn bis zur Container-Plattform im
+Rechenzentrum.
+
+Mein Fokus: Entscheidungen so treffen und dokumentieren, dass sie
+tragfähig bleiben — über Systemgrenzen hinweg und über Jahre hinweg.
+Mit arc42 für Architektur-Dokumentation, req42 für agile
+Anforderungs- und Produkt-Strukturierung sowie ADRs für tragende
+Entscheidungen unterstütze ich Teams dabei, Architektur nachvollziehbar
+zu gestalten und im Betrieb weiterzuführen.
+
+// Alternativ-Wording zum späteren Aufgreifen:
+// "zwischen dediziertem Betrieb und geteilter Cloud" — statt
+// "zwischen Flotte und Cloud". Trifft den eigentlichen Unterschied
+// (eigenes Eigentum/Tenancy vs. shared Hyperscaler) genauer, bricht
+// aber die Trias-Symmetrie der drei Spans und liest sich sperriger.
+// Idee festhalten für eine spätere Iteration, in der die Abgrenzung
+// zu DR/Infrastruktur-Architektur noch schärfer gezogen werden soll.
+Plattform-Architektur ist die Disziplin, an den Schnittstellen
+mehrerer technischer Schichten und mehrerer Zeithorizonte lesbar zu
+bleiben. Sie ist kein einmal gezeichneter Bauplan, sondern entsteht
+und bewährt sich an drei Spannungslinien: zwischen Flotte und Cloud,
+zwischen Business-Anforderung und technischer Realität, zwischen
+heutiger Entscheidung und ihrer Pflege in fünf Jahren.
+
+Meine Rolle ist es, diese Entscheidungen sichtbar zu machen, gemeinsam
+mit Ihrem Team durchzuhalten und so zu dokumentieren, dass sie auch
+ohne ihre Urheber verständlich bleiben. Ich bin seit 1991 in der
+Software-Entwicklung tätig. An der Schnittstelle Geschäftsziel ↔
+Technik arbeite ich explizit seit 2007 (SAP-on-Linux-Transformation
+und DataCenter-Automatisierung im Chemie-Konzernumfeld).
+
+Ich bin Initiator des Open-Source-Frameworks https://www.tpo42.de[tpo42],
+das req42 und arc42 für Technical Product Owner als integriertes Werkzeug
+verbindet — entstanden aus dem Wunsch, beide Frameworks zu nutzen und
+dabei Single-Point-of-Truth zu wahren.
+
+== In welchen Rollen ich hier unterstütze
+
+* link:/roles/architect/[Architekt] — Plattform- und
+  Systemarchitektur von Multi-Chip Bare-Metal über Edge-Devices bis
+  zum IoT-Cloud-Eingang; Schnittstellen und Abhängigkeiten
+  systematisch sichtbar machen
+* link:/roles/mediator/[Vermittler] — aktiv Verständnis zwischen
+  Engineering und Business für Anforderungen, Risiken und
+  Entscheidungen schaffen, sodass Compliance, Vertrieb und Entwicklung
+  sie gleichermaßen nachvollziehen und tragen können
+* link:/roles/reviewer/[Reviewer] — bestehende Architekturen,
+  Dokumentation und Schnittstellen prüfen, Schwachstellen
+  identifizieren und konkrete Verbesserungspfade aufzeigen
+* link:/roles/sparring-partner/[Sparringspartner] — komplexe oder
+  kritische Entscheidungen strukturieren, Optionen vergleichen und
+  fundiert hinterfragen mit der methodischen Werkzeugkiste, die zur
+  Frage passt
+  (siehe link:/services/engineering-methodology/[Engineering-Methodik])
+* link:/roles/coach/[Coach] — Communities of Practice aufbauen,
+  Architekturprinzipien verankern und Teams in arc42, req42, req4arc
+  und ADR-Praxis begleiten
+* link:/roles/technical-product-owner/[Technical Product Owner] —
+  Anforderungen, Architektur und Betriebsmodell verbinden; methodisch
+  gestützt durch tpo42 und req4arc
+
+Welche Rolle gerade passt, ergibt sich aus der Situation.
+
+== Wann das passt
+
+// --- Cluster: Stakeholder-Brücke ---
+* Wenn bei Ihnen Business und Engineering aneinander vorbei reden —
+  und jemand fehlt, der Übersetzung und technische Tiefe gleichzeitig
+  mitbringt
+* Wenn Compliance- oder Sicherheits-Anforderungen (CRA, CISO-Vorgaben)
+  von Anfang an in der Architektur stecken sollen, statt am Ende
+  dranzukleben
+* Wenn die Frage "warum ist das so?" zu oft die Antwort "weil es
+  schon immer so war" findet
+// --- Cluster: Heterogene Schichten ---
+* Wenn ein System aus mehreren Schichten besteht — Edge, Backend,
+  Rechenzentrum — und die Architektur an den Schnittstellen unklar
+  bleibt
+* Wenn Echtzeit-Fähigkeit in einem Subsystem die Gesamtarchitektur
+  prägt
+* Wenn Datenpfade von Hardware-Sensoren über Edge-Gateways bis in
+  Cloud-Backends (Kafka, MQTT, gRPC) durchgängig sichtbar und
+  belastbar bleiben müssen
+// --- Cluster: Modernisierung & tradiertes Wissen ---
+* Wenn Sie ein gewachsenes System (Firmware, Monolith, RZ-Topologie)
+  ohne belastbare Architekturdokumentation pflegen — und das Wissen
+  in den Köpfen einzelner liegt
+* Wenn ein Refactoring (Monolith → verteilt, manuelle → automatisierte
+  Prozesse, Legacy-Toolchain → moderne Plattform) als
+  Architektur-getriebener Schritt ansteht
+* Wenn eine Modernisierungsstrategie ansteht und die
+  Entscheidungsgrundlage erst noch entstehen muss
+// --- Cluster: Architektur als Organisationsthema ---
+* Wenn Architekturfähigkeit als organisatorische Kompetenz wachsen
+  soll — Communities of Practice, Architektur-Manifest,
+  Reviewer-Strukturen
+* Wenn Entwicklerteams an verteilten Standorten zu konsistenter
+  Architekturarbeit finden sollen
+
+== Aus meiner Praxis
+
+https://www.tpo42.de[tpo42] — Open-Source-Framework, das req42
+(Requirements Engineering) mit arc42 (Architekturdokumentation) für
+Technical Product Owner als integriertes Werkzeug verbindet. Entstanden
+als Rettungsanker für Projekte ohne dedizierten Product Owner mit
+Gespür für Anforderungen: arc42 setzt funktionale, nicht-funktionale
+und Qualitätsanforderungen voraus, sagt aber nichts darüber, wie sie
+entstehen. tpo42 koppelt req42 vor und gibt der Architekturdokumentation
+damit eine belastbare Quelle.
+
+tpo42 reift in der Anwendung — in mehreren laufenden Kundenengagements
+und in eigenen Open-Source-Projekten. Sichtbar etwa im Yocto-Layer
+link:/projects/meta-prd-flash/[meta-prd-flash], dessen Architektur und
+Anforderungen ich vollständig nach arc42 + req42 dokumentiert habe.
+
+Konkrete Architekturarbeit auf Projektebene findet sich verkürzt im
+link:/track-record/[Track Record] — Edge-Gateway-Architektur,
+Kameraplattform mit 100-Meter-Kabel-Schnittstelle, standortübergreifende
+CI/CD-Plattform, Container-Plattform für SAP-Anbindung, Communities
+of Practice in einer Konzern-IT.
+
+== Häufige Fragen
+
+[qanda]
+Was unterscheidet dieses Angebot vom Engineering-Methodik-Angebot?::
+Hier *wende* ich Methode an, dort *vermittle* ich sie. Konkret: In
+diesem Angebot arbeite ich am echten System — req42-Anforderungen,
+arc42-Bausteine, ADRs zu konkreten Entscheidungen, Schnittstellen
+zwischen Edge, Backend und Rechenzentrum. Im
+link:/services/engineering-methodology/[Engineering-Methodik]-Angebot
+befähige ich Teams: Coaching, Schulung, Practice Review. Beides
+verschränkt sich in der Praxis oft — ein Architektur-Review liefert
+eine Doku, ein Methodik-Coaching liefert ein Team, das selber
+dokumentiert.
+
+Wer pflegt die Architekturdokumentation nach Projektabschluss?::
+Das ist die Frage, an der die meisten Architektur-Bemühungen
+stillschweigend zerfallen. Mein Standard-Vorgehen verschiebt das
+Pflege-Risiko nach vorn: Documentation as Code lebt im Code-Repo des
+Teams, nicht in einem Confluence-Ordner ohne Eigentümer. ADRs
+entstehen bei der Entscheidung, nicht im Nachhinein. Wo es
+organisatorisch passt, baue ich Communities of Practice und ein
+Architektur-Manifest auf — so trägt das Team die Pflege gemeinsam
+statt einzelner Schultern. Übergangsweise begleite ich in geringer
+Auslastung weiter, wenn Sie das wollen.
+
+Sind Eindraht-Bus und Software-Defined Network nicht völlig verschiedene Welten?::
+Technisch ja, architektonisch nicht. Schauen Sie auf Software-Defined
+Networks: VLAN-Tagging im Yocto-Entwicklernetz isoliert jedes Board,
+Linux-Namespaces in der Gebäudeautomation segmentieren die
+Inter-Liegenschafts-Kommunikation, eine CNI-Implementierung in der
+Container-Plattform trennt Tenants. Drei verschiedene Welten — eine
+Abstraktion. Wer Schnittstellenformat, Authentisierung, Update-Modell
+oder Telemetrie-Pfad an einer Stelle nicht sauber entscheidet, zahlt
+an der nächsten. Die Eindraht-Bus-bis-Plattform-Spannweite ist keine
+Marketing-Phrase: Ein Architekt mit Reichweite kommt günstiger als
+drei Spezialisten, die sich nur an ihren Schnittstellen treffen.
+
+Schreiben Sie auch Code, oder nur Architekturdokumente?::
+Ja, ständig — *Everything-as-Code*: Doku, Diagramme, Infrastruktur
+und Quality-Gates entstehen als Code. Daneben Hands-on am Produktcode,
+wenn der Beleg in Code kürzer ausfällt als drei Workshops. Bei
+systemnahen Technologien ist *Architekt + Lead-Developer in einer
+Person* die natürliche Konfiguration — Schwerpunkt des Angebots
+link:/services/bare-metal-multi-controller/[Bare-Metal &
+Multi-Controller]; und in knapp besetzten Teams sind mehrere Rollen
+pro Person ohnehin die Regel, Communities of Practice fördern genau
+das. Was ich vermeide: die kalte Verschiebung im Projektverlauf, wenn
+das Mandat nicht mitwandert.
+
+Wie lange dauert ein Architektur-Review typischerweise?::
+Ein Architektur-Review extrahiert kein tradiertes Wissen aus Köpfen —
+das wäre Architektur-Arbeit. Ein Review prüft die vorhandene
+Dokumentation: Wo sind Lücken? Wo bauen Schlussfolgerungen auf
+impliziten statt expliziten Annahmen auf? Wo stehen Entscheidungen
+ohne Begründung im Raum? Erfahrungsgemäß ein bis zwei Wochen. Länger
+wird es bei sehr dichten Dokumentationen mit viel vorausgesetztem
+Domänenwissen, bei sehr umfangreichen Dokumentationen oder bei der
+ungünstigen Kombination aus beidem. Eine begleitende
+Architektur-Arbeit über Wochen oder Monate ist der häufigere Fall —
+das Review ist dann ein Zwischenstand, nicht der Endpunkt. Wenn Sie
+vorab nicht festlegen können, was das Review beantworten soll, hilft
+ein Vorgespräch mehr als ein Angebot.
+
+== Reden wir!
+
+Erstgespräch, Architektur-Sparring oder einfach kennenlernen —
+link:/kontakt/[Termin vereinbaren] oder
++++<span class="email-protect" data-user="rehsack+de" data-domain="gmail.com" data-subject="Anfrage zu Plattform- und Systemarchitektur über rehsack.de" data-body="Hallo Jens Rehsack,&#10;&#10;ich würde Sie gern zu einem Gespräch über mein Architektur-Vorhaben kennenlernen.&#10;&#10;(Kurze Beschreibung)&#10;&#10;Viele Grüße" data-text="per e-Mail">[JavaScript erforderlich]</span>+++.

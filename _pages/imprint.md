@@ -22,7 +22,8 @@ Jens Rehsack (Anschrift wie oben)
 
 ### Haftungshinweis
 
-Dies ist ein persönlicher Blog. Es werden keine Waren oder
+Diese Website bewirbt freiberufliche Beratungs- und
+Engineering-Dienstleistungen. Es werden keine Waren oder
 Dienstleistungen direkt über diese Website verkauft.
 
 ---

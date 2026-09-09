@@ -1,15 +1,15 @@
 # Site Settings
-remote_theme             : "mmistakes/minimal-mistakes"
+theme                    : minimal-mistakes-jekyll
 minimal_mistakes_skin    : "dirt"
 
 locale                   : "de"
 title                    : "Jens Rehsack"
 title_separator          : "-"
-subtitle                 : "Softwarearchitekt · Alfista · Gärtner ohne Zeit"
+subtitle                 : "Plattform-Architekt für komplexe technische Systeme — Embedded, IoT, verteilt"
 url                      : "https://rehsack.de"
 baseurl                  :
 repository               : "rehsack/rehsack.de"
-description              : "Persönlicher Blog von Jens Rehsack — Technik, Meinung, Leben"
+description              : "Jens Rehsack — Senior Plattform-Architekt. Beratung für Embedded, Yocto, verteilte Systeme und Engineering-Methodik."
 permalink                : pretty
 
 # Site Author
@@ -99,7 +99,6 @@ sass:
 
 # Plugins
 plugins:
-  - jekyll-remote-theme
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache

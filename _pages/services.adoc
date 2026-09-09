@@ -1,0 +1,42 @@
+---
+title: "Services"
+permalink: /services/
+---
+
+Sechs Schwerpunkte — als thematische Bühnen, nicht als Rollen-Etiketten.
+Jeder Schwerpunkt steht für sich; in der Praxis verschränken sich die
+Themen oft. Links die übergreifenden Architektur- und Methodik-Bühnen,
+rechts die konkreten Praxis-Tiefen.
+
+== link:/services/platform-architecture/[Plattform- & Systemarchitektur]
+
+Durchgängige Architektur vom Eindraht-Bus bis zum Rechenzentrum — mit
+Stakeholder-Brücke zwischen Business und Tech.
+
+== link:/services/embedded-yocto/[Embedded & Yocto]
+
+Linux-basierte Embedded-Plattformen, BSPs, Build-Pipelines, OTA-Updates —
+Yocto-Contributor seit 2015. Für ganz kleine Systeme auch Buildroot.
+
+== link:/services/distributed-systems/[Verteilte Systeme & Plattformen]
+
+Rechenzentrums- und Cluster-Architektur, Migration und Modernisierung
+großer Plattformen — vom kleinen Self-hosted Cluster bis zum
+Enterprise-Stack, mit SAP-as-a-Service als Tiefen-Anker.
+
+== link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller]
+
+Architektur und Lead-Development für systemnahe Embedded-Systeme —
+STM32, M0, ADµCM360, s6-rc, Bare-Metal-Code, Co-Prozessor-Kommunikation
+in einem Gerät.
+
+== link:/services/engineering-methodology/[Engineering-Methodik]
+
+PARIS, Responsible Engineering, docs-as-code, tpo42 — die Methodik
+hinter tragfähigen Architekturen.
+
+== link:/services/open-source-engagement/[Open Source Engagement]
+
+Langlebige Pflege von Open-Source-Bausteinen, die kommerzielle Stacks
+tragen — CPAN-Module, NetBSD-pkgsrc, Yocto-Layer, libstatgrab,
+smart-snmpd.

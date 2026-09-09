@@ -1,0 +1,13 @@
+---
+layout: landing
+title: "Jens Rehsack"
+tagline: "Plattform-Architekt für komplexe technische Systeme — Embedded, IoT, verteilt"
+permalink: /
+---
+
+Senior Plattform-Architekt mit 35 Jahren Erfahrung an der Schnittstelle
+von Geschäftsziel und technischer Realität.
+Schwerpunkt: Embedded/IoT, Yocto und verteilte Plattformen — vom BSP
+bis zum Rechenzentrum.
+Yocto-Contributor, NetBSD-Committer, Initiator des Open-Source-Frameworks
+https://www.tpo42.de[tpo42] für Technical Product Owner.

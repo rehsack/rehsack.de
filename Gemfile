@@ -3,8 +3,8 @@ source "https://rubygems.org"
 # Core
 gem "jekyll", "~> 4.4"
 
-# Theme (remote)
-gem "jekyll-remote-theme"
+# Theme (local gem — reproducible builds, no codeload.github.com dependency)
+gem "minimal-mistakes-jekyll"
 
 # AsciiDoc support
 gem "jekyll-asciidoc"

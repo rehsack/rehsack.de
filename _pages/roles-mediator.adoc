@@ -1,0 +1,48 @@
+---
+title: "Vermittler"
+permalink: /roles/mediator/
+---
+
+Aktiv Verständnis zwischen Engineering und Business schaffen — für
+Anforderungen, Risiken und Entscheidungen, die Compliance, Vertrieb
+und Entwicklung gleichermaßen nachvollziehen und tragen können. Diese
+Rolle ist nach Gernot Starke (Effektive Software-Architekturen)
+Bestandteil der link:/roles/architect/[Architekten-Rolle]; in
+Projekten mit besonders breiter Stakeholder-Landschaft wird sie so
+prominent, dass sie als eigene Rolle ausgewiesen werden sollte.
+
+== Wann diese Rolle passt
+
+// TODO ausarbeiten — Stichworte:
+// - Compliance- und Vertriebs-Stakeholder reden im selben Projekt
+//   aneinander vorbei, weil das Engineering keine gemeinsame Sprache
+//   anbietet
+// - Eine Architekturentscheidung mit Geschäfts-, Risiko- und
+//   Technik-Dimension steht an und muss von mehreren Schultern
+//   getragen werden
+// - Ein Audit oder eine Zertifizierung verlangt, dass technische
+//   Entscheidungen auch für nicht-technische Stakeholder transparent
+//   dokumentiert sind
+// - Vertrieb gibt Kunden technische Garantien, die das Team nicht
+//   halten kann — und niemand baut die Brücke zurück
+
+== Verwandte Rollen
+
+link:/roles/architect/[Architekt] (Vermittlung ist nach Starke Teil
+der Architekten-Rolle, hier als eigener Schwerpunkt sichtbar gemacht),
+link:/roles/sparring-partner/[Sparringspartner] (Verständnisaufbau
+ergänzt durch fundiertes Hinterfragen),
+link:/roles/technical-product-owner/[Technical Product Owner]
+(Vermittlung als Daueraufgabe in einer integrierten Rolle)
+
+== Relevante Themen
+
+link:/services/platform-architecture/[Plattform- & Systemarchitektur],
+link:/services/distributed-systems/[Verteilte Systeme & Plattformen],
+link:/services/engineering-methodology/[Engineering-Methodik]
+
+[NOTE]
+====
+Diese Seite ist als Skelett angelegt und wird vor Live-Gang vertieft.
+Für ein Erstgespräch: link:/kontakt/[Termin vereinbaren].
+====

@@ -1,0 +1,254 @@
+---
+title: "Embedded & Yocto"
+permalink: /services/embedded-yocto/
+service_name: "Embedded & Yocto Beratung"
+service_description: "Langfristige Architektur- und Plattform-Begleitung für Industrie-4.0- und Home-Energy-Embedded-Plattformen mit Yocto/OpenEmbedded — von der ersten BSP-Entscheidung bis zum Field-Update unter Compliance-Druck. Für ganz kleine Systeme, die komplett aus der initrd laufen, auch Buildroot."
+service_type: "Embedded Linux Platform Engineering"
+faqs:
+  - q: "Wie lange dauert so etwas typischerweise?"
+    a: |
+      Die Dauer bestimmen die Stolpersteine, nicht die Tabellen —
+      Boot-Sequenz, Werks-Zustand, Kunden-Kommissionierung,
+      Key-Management, Update-Strategie, SBOM-Pflege. Ein
+      handgestrickter Prototyp ist in günstigen Umständen in wenigen
+      Wochen vorzeigbar, aber das ist kein auslieferbares Produkt. Bis
+      der Entwicklungsprozess trägt, geht es typischerweise um Monate;
+      bis ein Release durch die Produktion fertigt, eher um ein Jahr.
+      Wer schneller fertig sein will, baut meist einen
+      Einzelgeräte-Custom-Build statt einer Plattform.
+  - q: "Übernehmen Sie auch bestehende Yocto-Projekte, oder muss ich neu anfangen?"
+    a: |
+      Übernahme ist der Normalfall. Auch wenn ein Projekt aussieht wie
+      "Mut zur Lücke", kann ich es fast immer inkrementell
+      stabilisieren — saubere Layer-Trennung, ein paar Build-Lock-Fixes,
+      dann Schritt für Schritt refaktorisieren. Komplett neu nur, wenn
+      sich das Konzept der Plattform grundlegend ändert.
+  - q: "Was unterscheidet Yocto von einer Standard-Linux-Distribution wie Debian oder Alpine?"
+    a: |
+      Die eigentliche Unterscheidung läuft nicht zwischen Yocto und
+      Debian, sondern zwischen General Purpose und Dedicated Purpose
+      Linux. Debian, Fedora, Alpine, SuSE und ihre Verwandten sind
+      General-Purpose-Systeme: gebaut, um jede Hardware und jede
+      Anwendungsdomäne bedienen zu können — und tragen entsprechend
+      alles in sich, was irgendjemand brauchen könnte.
+      Dedicated-Purpose-Linux, wie es Yocto und OpenEmbedded etwa für
+      die BMW-Head-Unit, Automotive Grade Linux (AGL), viele
+      Industrie-Gateways oder Smart-TV-Plattformen tragen, dreht das
+      um: Es enthält genau das, was dieses Gerät für seine Aufgabe
+      braucht, und sonst nichts. Reproduzierbarkeit, Update-Fähigkeit und
+      Compliance-Nachweise folgen aus dieser Disziplin — in einem
+      Custom-Debian-Build kosten sie erheblichen Eigenaufwand.
+  - q: "Wie passt CRA in das Bild?"
+    a: |
+      Die CRA verlangt Lifecycle-Dokumentation, sichere Updates, SBOMs
+      und nachvollziehbare Schwachstellen-Behandlung. Yocto liefert die
+      Substanz für all das mit — wenn Sie das Projekt von Anfang an mit
+      Plattform-Disziplin aufsetzen. Was die CRA nicht verbietet:
+      Updates per physischem Medium und Vor-Ort-Termin. Was Updates
+      per Feldbesuch in der Realität verdrängt, sind demografische und
+      ökonomische Faktoren — die Rechnung über zehntausend Geräte und
+      einen Feldtechniker.
+  - q: "Können meine Entwickler ungewöhnliche Komponenten wie s6 oder meta-prd-flash langfristig pflegen?"
+    a: |
+      Die Sorge ist berechtigt. Zwei Hebel entlasten sie. Erstens:
+      saubere Architekturdokumentation nach tpo42 (req42 für
+      Anforderungen, arc42 für Architektur inklusive ADRs), damit der
+      Stack lesbar bleibt — auch ohne den, der ihn gebaut hat. Zweitens:
+      LLM-gestützte Maintenance — auf einem dokumentierten Stack
+      durchsuchen aufgesetzte LLM-Skills den Code und begleiten den
+      Alltag.
+      Die Frage verschiebt sich damit weg von "kennt jemand das
+      Werkzeug?" hin zu "ist das System verständlich beschrieben?"
+  - q: "Begleiten Sie nur die Software, oder geht es auch um Hardware-Auswahl?"
+    a: |
+      Hardware-Entscheidungen begleite ich aus der
+      Software-Plattform-Perspektive — Toolchain-Verfügbarkeit,
+      Long-Term-Support-Aussichten, BSP-Reifegrad,
+      Vendor-Lock-in-Risiken. Reine Hardware-Bewertung (EMV, Mechanik,
+      Layout) ist nicht mein Feld; dort arbeite ich mit
+      Hardware-Kollegen zusammen.
+  - q: "Lohnt sich ein Software-Sparring vor dem PCB-Layout?"
+    a: |
+      Fast immer. Eine Anforderung von der Spec bis zur Konsequenz im
+      Softwarestack durchspielen — Prozessor-Wahl, Speicher-Layout,
+      Boot-Konzept, Peripherie-Verkabelung, Secure Boot, OTA-Pfad über
+      die geplante Konnektivität — kostet ein paar Tage vor dem
+      PCB-Tape-Out und spart erfahrungsgemäß Monate danach. Manche
+      k.o.-Faktoren lassen sich anschließend nur mit deutlich höherem
+      Aufwand korrigieren. Solche Sparrings sind kein vollständiges
+      Architektur-Engagement, sondern eine fokussierte Vor-PCB-Runde.
+---
+
+Langfristige Architektur- und Plattform-Begleitung für Industrie-4.0-
+und Home-Energy-Embedded-Plattformen mit Yocto/OpenEmbedded — von der
+ersten BSP-Entscheidung bis zum Field-Update unter Compliance-Druck.
+Yocto-Contributor seit 2015. Maintainer eigener Layer wie
+link:/projects/meta-prd-flash/[`meta-prd-flash`] und
+link:/projects/meta-sysinit/[`meta-sysinit`].
+
+Yocto-Projekte sind keine Wochen-Sache. Die Dauer bestimmen die
+typischen Stolpersteine — Boot-Sequenz, Werks-Zustand,
+Kunden-Kommissionierung, Key-Management, Update-Strategie,
+SBOM-Pflege — und nicht Tabellen-Schätzungen. Ein handgestrickter
+Prototyp ist in günstigen Umständen in wenigen Wochen vorzeigbar; bis
+der Entwicklungsprozess trägt, geht es um Monate, bis ein
+auslieferbares Release durch die Produktion fertigt, eher um ein Jahr.
+Einige Fragen kennen Sie schon. Einige kenne ich aus Erfahrung. Einige
+stellen sich situativ auf dem Weg. Meine Rolle: die richtigen Fragen
+finden, sie stellen und gemeinsam Antworten suchen.
+
+== In welchen Rollen ich hier unterstütze
+
+* link:/roles/architect/[Architekt] — Plattform-Architektur entwerfen,
+  BSP-Strategie, Layer-Schnitt
+* link:/roles/reviewer/[Reviewer] — bestehende Builds, Layer und
+  Update-Strategien prüfen, Verbesserungspfade aufzeigen
+* link:/roles/sparring-partner/[Sparringspartner] — knifflige
+  Entscheidungen sortieren, Optionen durchspielen
+* link:/roles/coach/[Coach] — Team-Befähigung, Recipe- und
+  Layer-Patterns einüben, Mentoring von Maintainern
+* link:/roles/interim-maintainer/[Interim-Maintainer] —
+  Übergangs-Stewardship nach Maintainer-Wechsel
+* link:/roles/lead-engineer/[Lead Engineer] — Hands-on Recipe- und
+  Layer-Code, BSP-Features umsetzen, eine Update-Pipeline tatsächlich
+  bauen statt nur zeichnen
+* link:/roles/technical-product-owner/[Technical Product Owner] —
+  req42, arc42 und Betrieb in einer Rolle, methodisch unterlegt durch
+  tpo42 und req4arc
+
+Welche Rolle gerade passt, ergibt sich aus der Situation.
+
+== Wann das passt
+
+Ein verifiziertes Image für alle Geräte vor individuellem
+Softwarestand pro Kundeninstallation. Konkret:
+
+// --- Cluster: Verifikation & Identität ---
+* Wenn jedes Gerät einen leicht anderen Softwarestand trägt — und
+  niemand mehr sagen kann, welche Version wo läuft
+* Wenn Sie Update und Installation gemeinsam zertifizieren wollen
+* Wenn im CRA-Kontext qualifizierte SBOM und Software-Supply-Chain
+  zum Thema werden
+* Wenn initiale Installation und laufende Pflege identische
+  Artefakte verlangen, heute aber auf getrennten Wegen entstehen
+* Wenn der Distributionsweg via Feldtechniker enden soll
+// --- Cluster: CI / Build ---
+* Wenn das Team beim Wort "BSP" unterschiedliche Bilder im Kopf hat
+* Wenn Ihr SSTATE-Cache nie richtig "greift"
+* Wenn die HW-Entwicklung Kernel-Patches "hinrotzt" statt pflegt
+// --- Cluster: Übernahme & Stabilisierung ---
+* Wenn Sie eine bestehende Yocto-Lösung in die interne Pflege
+  übernehmen und stabilisieren müssen — auch über die nächsten
+  Technologie-Upgrades hinweg
+
+== Aus meiner Open-Source-Praxis
+
+Zwei eigene Yocto-Layer auf GitLab, die zeigen, wie ich Probleme
+schneide:
+
+* link:/projects/meta-prd-flash/[meta-prd-flash] — Provisioning-
+  und Field-Update-Layer mit deklarativem Deployment. Vision:
+  einmal bauen, einmal verifizieren, überall ausliefern.
+* link:/projects/meta-sysinit/[meta-sysinit] — Init- und
+  Service-Supervision-Layer jenseits des systemd-Standards
+  (daemontools, s6, runit). Vision: divide et impera, auf das
+  absolut Wesentliche reduziert.
+
+== Yocto oder Buildroot?
+
+Yocto ist das Werkzeug für Plattformen — modular, layer-orientiert,
+mit Disziplin für Reproduzierbarkeit, Update-Pfade und
+Compliance-Nachweise über mehrere Hardware-Generationen. Diese
+Disziplin kostet: längere Build-Zeiten, dickere Toolchain, höhere
+mentale Last beim Onboarding.
+
+Buildroot ist meiner Erfahrung nach die bessere Wahl, wenn Linux
+gebraucht wird, es aber um jedes Byte geht. Alles muss dann "zu Fuß"
+gemacht werden — vom Download über die Konfiguration bis zur
+SBOM-Erstellung und zum CVE-Scanning — aber dafür entstehen komplette
+Systeme in Größen, die bei Yocto, überspitzt formuliert, allein für
+den Bootloader gebraucht werden. OpenWrt, ein Ableger von Buildroot,
+war darauf spezialisiert, Router mit 16 MB Flash zu unterstützen — bei
+Yocto fängt dort die /boot-Partition an.
+
+Was beide gemeinsam haben: die Disziplin bei BSP-Pflege,
+Kernel-Patches und SBOM bleibt — sie wandert nur in eine andere
+Konfig-Form.
+
+== Häufige Fragen
+
+[qanda]
+Wie lange dauert so etwas typischerweise?::
+Die Dauer bestimmen die Stolpersteine, nicht die Tabellen —
+Boot-Sequenz, Werks-Zustand, Kunden-Kommissionierung, Key-Management,
+Update-Strategie, SBOM-Pflege. Ein handgestrickter Prototyp ist in
+günstigen Umständen in wenigen Wochen vorzeigbar, aber das ist kein
+auslieferbares Produkt. Bis der Entwicklungsprozess trägt, geht es
+typischerweise um Monate; bis ein Release durch die Produktion
+fertigt, eher um ein Jahr. Wer schneller fertig sein will, baut
+meist einen Einzelgeräte-Custom-Build statt einer Plattform.
+
+Übernehmen Sie auch bestehende Yocto-Projekte, oder muss ich neu anfangen?::
+Übernahme ist der Normalfall. Auch wenn ein Projekt aussieht wie
+"Mut zur Lücke", kann ich es fast immer inkrementell stabilisieren —
+saubere Layer-Trennung, ein paar Build-Lock-Fixes, dann Schritt für
+Schritt refaktorisieren. Komplett neu nur, wenn sich das Konzept der
+Plattform grundlegend ändert.
+
+Was unterscheidet Yocto von einer Standard-Linux-Distribution wie Debian oder Alpine?::
+Die eigentliche Unterscheidung läuft nicht zwischen Yocto und
+Debian, sondern zwischen *General Purpose* und *Dedicated Purpose*
+Linux. Debian, Fedora, Alpine, SuSE und ihre Verwandten sind
+General-Purpose-Systeme: gebaut, um jede Hardware und jede
+Anwendungsdomäne bedienen zu können — und tragen entsprechend
+alles in sich, was irgendjemand brauchen könnte. Dedicated-Purpose-
+Linux, wie es Yocto und OpenEmbedded etwa für die BMW-Head-Unit,
+Automotive Grade Linux (AGL), viele Industrie-Gateways oder
+Smart-TV-Plattformen tragen, dreht das um: Es enthält genau das,
+was *dieses* Gerät für *seine* Aufgabe braucht, und sonst nichts.
+Reproduzierbarkeit, Update-Fähigkeit und Compliance-Nachweise folgen
+aus dieser Disziplin — in einem Custom-Debian-Build kosten sie
+erheblichen Eigenaufwand.
+
+Wie passt CRA in das Bild?::
+Die CRA verlangt Lifecycle-Dokumentation, sichere Updates, SBOMs und
+nachvollziehbare Schwachstellen-Behandlung. Yocto liefert die Substanz
+für all das mit — wenn Sie das Projekt von Anfang an mit
+Plattform-Disziplin aufsetzen. Was die CRA *nicht* verbietet:
+Updates per physischem Medium und Vor-Ort-Termin. Was Updates per
+Feldbesuch in der Realität verdrängt, sind demografische und
+ökonomische Faktoren — die Rechnung über zehntausend Geräte und
+einen Feldtechniker.
+
+Können meine Entwickler ungewöhnliche Komponenten wie s6 oder meta-prd-flash langfristig pflegen?::
+Die Sorge ist berechtigt. Zwei Hebel entlasten sie. Erstens: saubere
+Architekturdokumentation nach tpo42 (req42 für Anforderungen, arc42
+für Architektur inklusive ADRs), damit der Stack lesbar bleibt — auch
+ohne den, der ihn gebaut hat. Zweitens: LLM-gestützte Maintenance —
+auf einem dokumentierten Stack durchsuchen aufgesetzte LLM-Skills den
+Code und begleiten den Alltag. Die Frage verschiebt sich damit weg von
+"kennt jemand das Werkzeug?" hin zu "ist das System verständlich
+beschrieben?"
+
+Begleiten Sie nur die Software, oder geht es auch um Hardware-Auswahl?::
+Hardware-Entscheidungen begleite ich aus der
+Software-Plattform-Perspektive — Toolchain-Verfügbarkeit,
+Long-Term-Support-Aussichten, BSP-Reifegrad, Vendor-Lock-in-Risiken.
+Reine Hardware-Bewertung (EMV, Mechanik, Layout) ist nicht mein Feld;
+dort arbeite ich mit Hardware-Kollegen zusammen.
+
+Lohnt sich ein Software-Sparring vor dem PCB-Layout?::
+Fast immer. Eine Anforderung von der Spec bis zur Konsequenz im
+Softwarestack durchspielen — Prozessor-Wahl, Speicher-Layout,
+Boot-Konzept, Peripherie-Verkabelung, Secure Boot, OTA-Pfad über die
+geplante Konnektivität — kostet ein paar Tage vor dem PCB-Tape-Out
+und spart erfahrungsgemäß Monate danach. Manche *k.o.-Faktoren*
+lassen sich anschließend nur mit deutlich höherem Aufwand
+korrigieren. Solche Sparrings sind kein vollständiges
+Architektur-Engagement, sondern eine fokussierte Vor-PCB-Runde.
+
+== Reden wir!
+
+Erstgespräch, Architektur-Sparring oder einfach kennenlernen —
+link:/kontakt/[Termin vereinbaren] oder
++++<span class="email-protect" data-user="rehsack+de" data-domain="gmail.com" data-subject="Anfrage zu Embedded und Yocto über rehsack.de" data-body="Hallo Jens Rehsack,&#10;&#10;ich würde Sie gern zu einem Gespräch über mein Embedded-/Yocto-Projekt kennenlernen.&#10;&#10;(Kurze Beschreibung)&#10;&#10;Viele Grüße" data-text="per e-Mail">[JavaScript erforderlich]</span>+++.

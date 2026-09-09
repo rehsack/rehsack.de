@@ -1,0 +1,40 @@
+---
+title: "Interim-Maintainer"
+permalink: /roles/interim-maintainer/
+---
+
+Übergangs-Stewardship, wenn ein bisheriger Maintainer das Team
+verlässt — die Plattform stabilisieren, dokumentieren, Übergabe an den
+Nachfolger begleiten. Eine bewusst zeitlich begrenzte Rolle mit
+klarem Ende.
+
+== Wann diese Rolle passt
+
+// TODO ausarbeiten — Stichworte:
+// - Der bisherige Yocto-/Plattform-Maintainer scheidet aus, der
+//   Nachfolger ist noch nicht da oder noch nicht eingearbeitet
+// - Ein bestehendes Projekt darf nicht stehenbleiben, aber das interne
+//   Team kann die Lücke noch nicht schließen
+// - Dokumentations-Schulden sollen während des Übergangs aufgearbeitet
+//   werden, statt sie an den Nachfolger weiterzureichen
+// - Übergabe-Ritual: Bereich für Bereich, mit Dokumentation, ADRs und
+//   Coaching des Nachfolgers (siehe link:/roles/coach/[Coach])
+
+== Verwandte Rollen
+
+link:/roles/architect/[Architekt], link:/roles/coach/[Coach],
+link:/roles/reviewer/[Reviewer],
+link:/roles/lead-engineer/[Lead Engineer] (dauerhafte Engineering-Verantwortung statt Übergang)
+
+== Relevante Themen
+
+link:/services/embedded-yocto/[Embedded & Yocto],
+link:/services/platform-architecture/[Plattform- & Systemarchitektur],
+link:/services/bare-metal-multi-controller/[Bare-Metal & Multi-Controller],
+link:/services/open-source-engagement/[Open Source Engagement]
+
+[NOTE]
+====
+Diese Seite ist als Skelett angelegt und wird vor Live-Gang vertieft.
+Für ein Erstgespräch: link:/kontakt/[Termin vereinbaren].
+====

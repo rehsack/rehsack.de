@@ -1,0 +1,48 @@
+---
+title: "meta-prd-flash"
+permalink: /projects/meta-prd-flash/
+---
+
+// TODO später — Verbindung "deklaratives Deployment" ↔ GitOps-Ansatz
+// einarbeiten, wenn sich eine knappe Formulierung findet.
+// TODO — CRA-Mapping (welche CRA-Anforderungen deckt der Layer
+// strukturell ab) gemeinsam ergänzen.
+
+Provisioning- und Field-Update-Layer für Embedded-Plattformen —
+gepflegt auf
+https://gitlab.com/meta-layer-collection/meta-prd-flash[GitLab].
+
+[quote]
+____
+Einmal bauen, einmal verifizieren, überall ausliefern — über den
+gesamten Geräte-Lebenszyklus.
+____
+
+Was die Vision vom üblichen Updater-Denken (Mender, RAUC, SWUpdate,
+Bosch IoT Rollouts) trennt, ist die Doktrin: *deklaratives
+Deployment* statt imperatives — nicht die Änderung wird beschrieben,
+sondern der Zielzustand. Daraus folgt eine Reihe von Eigenschaften,
+die in keinem anderen Updater-Layer gleichzeitig auftauchen:
+
+* *Checkpoint-Resume* — Updates setzen nach Strom-Unterbrechung am
+  letzten validen Sync-Point fort, statt von vorn zu starten oder
+  einen Brick zu hinterlassen
+* *Production Workflow Agnostic* — dasselbe Bundle dient vom
+  Werks-Image über Manufacturing-Varianten bis zum OTA-Rollout im
+  Feld, ohne Drift zwischen Produktion und Feld
+* *Flexible Partition-Layouts* — klassisches A/B genauso wie
+  A+Preparation-Stage für Multi-Chip-Systeme; dedizierte Slots
+  (System, Karten, Datenbanken) sind einzeln atomar updatebar
+* *Air-Gapped-fähig* — Updates per USB, NFS oder Offline-Medium
+  gehen denselben Weg wie OTA: gleiche Artefakte, gleiche
+  Verifikation
+* *Single Verification* — ein verifiziertes Artefakt für alle
+  Deployments, drastische Reduktion des Zertifizierungsaufwands
+  (KRITIS, CRA)
+* *Long-Term-Maintenance* — produktiver Feldeinsatz seit über zehn
+  Jahren, in dieser Zeit kein bekannter Rückläufer
+
+== Verwandtes Thema
+
+Diese Substanz wird in der Embedded-Beratung sichtbar:
+link:/services/embedded-yocto/[Embedded & Yocto].

@@ -34,5 +34,5 @@ Gärtner ohne Zeit, dafür mit Ambitionen.
 Und seit Jahren in einer Pflegesituation, die einem beibringt, was
 Prioritäten wirklich bedeuten.
 
-Wenn Du Fragen hast oder Kontakt aufnehmen willst:
-link:/imprint/[Impressum & Kontakt].
+Bei Fragen oder zur Kontaktaufnahme: link:/kontakt/[Kontakt] —
+oder link:/imprint/[Impressum & Datenschutz].
